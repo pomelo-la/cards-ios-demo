@@ -372,8 +372,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:pomelo-la/cards-ios.git";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
