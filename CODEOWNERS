@@ -1,0 +1,4 @@
+# These owners will be the default checkers for everything in
+# the repo.
+
+*    @pomelo-la/offensiveteam
