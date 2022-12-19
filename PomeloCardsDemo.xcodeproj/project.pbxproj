@@ -14,7 +14,7 @@
 		8533F3FD294B9735001B0B22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8533F3FC294B9735001B0B22 /* Assets.xcassets */; };
 		8533F400294B9735001B0B22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8533F3FE294B9735001B0B22 /* LaunchScreen.storyboard */; };
 		8533F409294BA1E6001B0B22 /* PomeloCards in Frameworks */ = {isa = PBXBuildFile; productRef = 8533F408294BA1E6001B0B22 /* PomeloCards */; };
-		858278F8294CFB7800CBAADF /* ClientAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278F7294CFB7800CBAADF /* ClientAuthorizationService.swift */; };
+		858278F8294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278F7294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift */; };
 		858278FB294CFBC100CBAADF /* UserEmailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FA294CFBC100CBAADF /* UserEmailProvider.swift */; };
 		858278FD294CFC0C00CBAADF /* EndUserTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FC294CFC0C00CBAADF /* EndUserTokenResolver.swift */; };
 		858278FF294CFC1600CBAADF /* PomeloAccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FE294CFC1600CBAADF /* PomeloAccessTokenDTO.swift */; };
@@ -29,7 +29,7 @@
 		8533F3FC294B9735001B0B22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8533F3FF294B9735001B0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8533F401294B9735001B0B22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		858278F7294CFB7800CBAADF /* ClientAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientAuthorizationService.swift; sourceTree = "<group>"; };
+		858278F7294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenAuthorizationService.swift; sourceTree = "<group>"; };
 		858278FA294CFBC100CBAADF /* UserEmailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailProvider.swift; sourceTree = "<group>"; };
 		858278FC294CFC0C00CBAADF /* EndUserTokenResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenResolver.swift; sourceTree = "<group>"; };
 		858278FE294CFC1600CBAADF /* PomeloAccessTokenDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloAccessTokenDTO.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		85827900294CFC2200CBAADF /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				858278F7294CFB7800CBAADF /* ClientAuthorizationService.swift */,
+				858278F7294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				858278F8294CFB7800CBAADF /* ClientAuthorizationService.swift in Sources */,
+				858278F8294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift in Sources */,
 				8533F3F8294B9734001B0B22 /* ViewController.swift in Sources */,
 				8533F3F4294B9734001B0B22 /* AppDelegate.swift in Sources */,
 				858278FF294CFC1600CBAADF /* PomeloAccessTokenDTO.swift in Sources */,
