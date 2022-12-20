@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate,
                           UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 3 }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 4 }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = viewModel.launchWidgetController(by: indexPath.row) else { return }
@@ -46,14 +46,15 @@ extension ViewController: UITableViewDelegate,
             for: indexPath
         ) as? WidgetTableViewCell else { return WidgetTableViewCell() }
         
-        let row = indexPath.row
-        switch row {
+        switch indexPath.row {
             case CollectionViewCellTypes.cardActivation.rawValue:
-                cell.configCell(CollectionViewCellTypes.cardActivation)
+                cell.configCell(.cardActivation)
             case CollectionViewCellTypes.changePin.rawValue:
-                cell.configCell(CollectionViewCellTypes.changePin)
-            case CollectionViewCellTypes.sensitiveData.rawValue:
-                cell.configCell(CollectionViewCellTypes.sensitiveData)
+                cell.configCell(.changePin)
+            case CollectionViewCellTypes.card.rawValue:
+                cell.configCell(.card)
+            case CollectionViewCellTypes.cardDetail.rawValue:
+                cell.configCell(.cardDetail)
         default: break
         }
         return cell
