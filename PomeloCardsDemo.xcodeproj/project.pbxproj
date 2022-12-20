@@ -18,6 +18,10 @@
 		858278FB294CFBC100CBAADF /* UserEmailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FA294CFBC100CBAADF /* UserEmailProvider.swift */; };
 		858278FD294CFC0C00CBAADF /* EndUserTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FC294CFC0C00CBAADF /* EndUserTokenResolver.swift */; };
 		858278FF294CFC1600CBAADF /* PomeloAccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FE294CFC1600CBAADF /* PomeloAccessTokenDTO.swift */; };
+		A42FC3992950AC9F00ACA1D6 /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3982950AC9F00ACA1D6 /* WidgetTableViewCell.swift */; };
+		A42FC39C2950AE3800ACA1D6 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC39B2950AE3800ACA1D6 /* Enums.swift */; };
+		A42FC39F2952104100ACA1D6 /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC39E2952104100ACA1D6 /* WidgetViewModel.swift */; };
+		A42FC3A22952180900ACA1D6 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A12952180900ACA1D6 /* CardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		858278FA294CFBC100CBAADF /* UserEmailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailProvider.swift; sourceTree = "<group>"; };
 		858278FC294CFC0C00CBAADF /* EndUserTokenResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenResolver.swift; sourceTree = "<group>"; };
 		858278FE294CFC1600CBAADF /* PomeloAccessTokenDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloAccessTokenDTO.swift; sourceTree = "<group>"; };
+		A42FC3982950AC9F00ACA1D6 /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
+		A42FC39B2950AE3800ACA1D6 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		A42FC39E2952104100ACA1D6 /* WidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewModel.swift; sourceTree = "<group>"; };
+		A42FC3A12952180900ACA1D6 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 		8533F3F2294B9734001B0B22 /* PomeloCardsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A42FC3A0295217E900ACA1D6 /* WidgetControllers */,
+				A42FC39D29520F7800ACA1D6 /* ViewModel */,
+				A42FC39A2950AE2100ACA1D6 /* Helpers */,
+				A42FC3972950ABCD00ACA1D6 /* Cells */,
 				8533F3F3294B9734001B0B22 /* AppDelegate.swift */,
 				8533F3F5294B9734001B0B22 /* SceneDelegate.swift */,
 				8533F3F7294B9734001B0B22 /* ViewController.swift */,
@@ -95,6 +107,38 @@
 				858278F7294CFB7800CBAADF /* ClientAuthorizationService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		A42FC3972950ABCD00ACA1D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC3982950AC9F00ACA1D6 /* WidgetTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A42FC39A2950AE2100ACA1D6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC39B2950AE3800ACA1D6 /* Enums.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A42FC39D29520F7800ACA1D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC39E2952104100ACA1D6 /* WidgetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A42FC3A0295217E900ACA1D6 /* WidgetControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC3A12952180900ACA1D6 /* CardController.swift */,
+			);
+			path = WidgetControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,12 +218,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42FC39F2952104100ACA1D6 /* WidgetViewModel.swift in Sources */,
 				858278F8294CFB7800CBAADF /* ClientAuthorizationService.swift in Sources */,
 				8533F3F8294B9734001B0B22 /* ViewController.swift in Sources */,
+				A42FC3992950AC9F00ACA1D6 /* WidgetTableViewCell.swift in Sources */,
 				8533F3F4294B9734001B0B22 /* AppDelegate.swift in Sources */,
 				858278FF294CFC1600CBAADF /* PomeloAccessTokenDTO.swift in Sources */,
+				A42FC3A22952180900ACA1D6 /* CardController.swift in Sources */,
 				858278FB294CFBC100CBAADF /* UserEmailProvider.swift in Sources */,
 				858278FD294CFC0C00CBAADF /* EndUserTokenResolver.swift in Sources */,
+				A42FC39C2950AE3800ACA1D6 /* Enums.swift in Sources */,
 				8533F3F6294B9734001B0B22 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
