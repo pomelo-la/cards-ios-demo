@@ -8,12 +8,16 @@
 import Foundation
 import PomeloNetworking
 
+
+/// Protocol with the method that retrieves a end user token for a given user email asynchronously
 protocol UserEmailEndUserTokenResolverProtocol {
     func resolve(email: String, completion: @escaping (String?) -> Void)
 }
 
-class UserEmailEndUserTokenResolver: UserEmailEndUserTokenResolverProtocol {
 
+/// Implementation of `UserEmailEndUserTokenResolverProtocol` using an sample backend service.
+class UserEmailEndUserTokenResolver: UserEmailEndUserTokenResolverProtocol {
+    
     func resolve(email: String, completion: @escaping (String?) -> Void) {
         let session = URLSession.shared
         guard let urlRequest = buildRequest(email: email) else {
