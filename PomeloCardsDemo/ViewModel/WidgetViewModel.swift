@@ -13,7 +13,7 @@ protocol WidgetViewModelProtocol {
 
 class WidgetViewModel: WidgetViewModelProtocol {
     
-    private let params: [String: Any] = ["card_id": "crd-2IBcLQ1m6mL0ZNEyd98eMESmGIK"]
+    private let params: [String: Any] = ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
     
     func launchWidgetController(by index: Int) -> UIViewController? {
         switch index {
