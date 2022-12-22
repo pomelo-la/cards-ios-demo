@@ -23,12 +23,14 @@ class WidgetTableViewCell: UITableViewCell {
         setupViews()
         setupConstraints()
     }
-        
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     private func setupViews() {
+        self.selectionStyle = .none
+        self.accessoryType = .disclosureIndicator
         self.contentView.addSubview(titleLabel)
     }
     
@@ -40,8 +42,8 @@ class WidgetTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor , constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
-            titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 50),
-            titleLabel.heightAnchor.constraint(equalToConstant: 30)
+            titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         ])
     }
 }

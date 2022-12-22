@@ -45,7 +45,6 @@ extension ViewController: UITableViewDelegate,
             withIdentifier: WidgetTableViewCell.identifier,
             for: indexPath
         ) as? WidgetTableViewCell else { return WidgetTableViewCell() }
-        
         switch indexPath.row {
             case CollectionViewCellTypes.cardActivation.rawValue:
                 cell.configCell(.cardActivation)
