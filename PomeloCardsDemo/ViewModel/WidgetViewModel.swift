@@ -25,7 +25,7 @@ class WidgetViewModel: WidgetViewModelProtocol {
             return getCard()
         case CollectionViewCellTypes.cardDetail.rawValue:
             return getCardList()
-        default: return UIViewController()
+        default: return nil
         }
     }
     
