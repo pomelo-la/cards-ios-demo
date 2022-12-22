@@ -7,6 +7,12 @@
 
 import Foundation
 
+/// Struct with the format of the service token response
+/// {
+///     "access_token": "kjdsfbadskjfguaid",
+///     "expires_in": 4,
+///     "token_type": "Bearer"
+/// }
 struct PomeloAccessTokenDTO: Decodable {
     let accessToken: String
     let expiresIn: Int

@@ -8,12 +8,14 @@
 import Foundation
 import PomeloNetworking
 
+/// Protocol with the methods required to handle clients user session
 protocol UserEmailProviderProtocol {
     func userEmailDidChange(to newEmail: String)
     func provideCurrentUserEmail() -> String?
     func clearUserEmailSettings()
 }
 
+/// Implementation of `UserEmailProviderProtocol` using `UserDefaults` as session persistance method.
 class UserEmailProvider: UserEmailProviderProtocol {
     
     func userEmailDidChange(to newEmail: String) {
