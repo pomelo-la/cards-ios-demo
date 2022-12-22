@@ -30,7 +30,15 @@ class WidgetViewModel: WidgetViewModelProtocol {
     }
     
     private func getActivationCardWidget() -> UIViewController? {
-        return nil
+        let widgetCardActivationViewController =  PomeloWidgetCardActivationViewController(completionHandler: { result in
+            switch result {
+            case .success(let cardId):
+                print("Card was activated. Card id: \(String(describing: cardId))")
+            case .failure(let error):
+                print("Activate card error: \(error)")
+            }
+        })
+        return widgetCardActivationViewController
     }
     
     private func getPinWidget() -> UIViewController? {
