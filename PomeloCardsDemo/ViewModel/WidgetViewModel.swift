@@ -66,8 +66,6 @@ class WidgetViewModel: WidgetViewModelProtocol {
     private func getCardList() -> UIViewController? {
         guard let cardId = params["card_id"] as? String else { return nil }
         let widgetDetailViewController = PomeloCardWidgetDetailViewController()
-        #warning("nuevo tag de cards para poder utilizar el metodo displayViewControllerAsBottomSheet")
-        //viewController.displayViewControllerAsBottomSheet(widgetDetailViewController)
         widgetDetailViewController.loadSensitiveData(cardId: cardId, onPanCopy: {
             print("Pan was coppied")
         }, completionHandler: { result in

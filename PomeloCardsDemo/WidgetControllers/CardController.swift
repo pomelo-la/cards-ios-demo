@@ -7,6 +7,7 @@ import Foundation
 import UIKit
 import PomeloCards
 
+/// Example - ViewController that contains `PomeloCardWidgetView` and show it as a model
 class CardController: UIViewController {
     let cardWidgetView: PomeloCardWidgetView
     let cardId: String
