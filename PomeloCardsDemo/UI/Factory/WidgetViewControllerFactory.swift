@@ -1,35 +1,34 @@
 //
-//  WidgetViewModel.swift
+//  WidgetViewControllerFactory.swift
 //  PomeloCardsDemo
+//
+//  Created by Fernando Pena on 23/12/2022.
 //
 
 import Foundation
 import UIKit
 import PomeloCards
 
-protocol WidgetViewModelProtocol {
-    func getWidgetController(by index: Int) -> UIViewController?
+protocol WidgetViewControllerFactoryProtocol {
+    func buildWidgetController(for widget: WidgetType, params: [String: Any]) -> UIViewController?
 }
 
-class WidgetViewModel: WidgetViewModelProtocol {
+class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
     
-    private let params: [String: Any] = ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
-    
-    func getWidgetController(by index: Int) -> UIViewController? {
-        switch index {
-        case TableViewCellType.cardActivation.rawValue:
-            return getActivationCardWidget()
-        case TableViewCellType.changePin.rawValue:
-            return getPinWidget()
-        case TableViewCellType.card.rawValue:
-            return getCard()
-        case TableViewCellType.cardDetail.rawValue:
-            return getCardList()
-        default: return nil
+    func buildWidgetController(for widget: WidgetType, params: [String: Any]) -> UIViewController? {
+        switch widget {
+        case .cardActivation:
+            return getActivationCardWidget(params: params)
+        case .changePin:
+            return getPinWidget(params: params)
+        case .card:
+            return getCard(params: params)
+        case .cardDetail:
+            return getCardList(params: params)
         }
     }
     
-    private func getActivationCardWidget() -> UIViewController? {
+    private func getActivationCardWidget(params: [String: Any]) -> UIViewController? {
         let widgetCardActivationViewController =  PomeloWidgetCardActivationViewController(completionHandler: { result in
             switch result {
             case .success(let cardId):
@@ -41,7 +40,7 @@ class WidgetViewModel: WidgetViewModelProtocol {
         return widgetCardActivationViewController
     }
     
-    private func getPinWidget() -> UIViewController? {
+    private func getPinWidget(params: [String: Any]) -> UIViewController? {
         guard let cardId = params["card_id"] as? String else { return nil }
         let widgetChangePinViewController = PomeloWidgetChangePinViewController(cardId: cardId, completionHandler: { result in
             switch result {
@@ -53,7 +52,7 @@ class WidgetViewModel: WidgetViewModelProtocol {
         return widgetChangePinViewController
     }
     
-    private func getCard() -> UIViewController? {
+    private func getCard(params: [String: Any]) -> UIViewController? {
         
         guard let cardId = params["card_id"] as? String else { return nil }
         let widgetView = PomeloCardWidgetView(settings: PomeloCardWidgetViewSettings(cardholderName: "Juan Perez",
@@ -63,7 +62,7 @@ class WidgetViewModel: WidgetViewModelProtocol {
         
     }
     
-    private func getCardList() -> UIViewController? {
+    private func getCardList(params: [String: Any]) -> UIViewController? {
         guard let cardId = params["card_id"] as? String else { return nil }
         let widgetDetailViewController = PomeloCardWidgetDetailViewController()
         widgetDetailViewController.loadSensitiveData(cardId: cardId, onPanCopy: {
