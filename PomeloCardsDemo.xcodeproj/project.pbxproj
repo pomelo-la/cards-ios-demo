@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		850A34F62955ED7800C99647 /* WidgetViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850A34F52955ED7800C99647 /* WidgetViewControllerFactory.swift */; };
+		850A34FD295639FA00C99647 /* CardStoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850A34FC295639FA00C99647 /* CardStoryboardViewController.swift */; };
 		850D18D52954B31300955E20 /* EndUserTokenAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D18D42954B31300955E20 /* EndUserTokenAuthorizationService.swift */; };
 		8533F409294BA1E6001B0B22 /* PomeloCards in Frameworks */ = {isa = PBXBuildFile; productRef = 8533F408294BA1E6001B0B22 /* PomeloCards */; };
 		A415717D29523E5300365B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42FC3B229523B8D00ACA1D6 /* LaunchScreen.storyboard */; };
@@ -15,7 +16,7 @@
 		A415717F29523E6800365B85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42FC3B129523B8D00ACA1D6 /* Assets.xcassets */; };
 		A42FC3BF29523B8D00ACA1D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A629523B8D00ACA1D6 /* HomeViewController.swift */; };
 		A42FC3C029523B8D00ACA1D6 /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A829523B8D00ACA1D6 /* WidgetTableViewCell.swift */; };
-		A42FC3C129523B8D00ACA1D6 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AA29523B8D00ACA1D6 /* CardController.swift */; };
+		A42FC3C129523B8D00ACA1D6 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AA29523B8D00ACA1D6 /* CardViewController.swift */; };
 		A42FC3C229523B8D00ACA1D6 /* EndUserTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AC29523B8D00ACA1D6 /* EndUserTokenResolver.swift */; };
 		A42FC3C329523B8D00ACA1D6 /* UserEmailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AD29523B8D00ACA1D6 /* UserEmailProvider.swift */; };
 		A42FC3C429523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AE29523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift */; };
@@ -28,11 +29,12 @@
 
 /* Begin PBXFileReference section */
 		850A34F52955ED7800C99647 /* WidgetViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewControllerFactory.swift; sourceTree = "<group>"; };
+		850A34FC295639FA00C99647 /* CardStoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStoryboardViewController.swift; sourceTree = "<group>"; };
 		850D18D42954B31300955E20 /* EndUserTokenAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenAuthorizationService.swift; sourceTree = "<group>"; };
 		8533F3F0294B9734001B0B22 /* PomeloCardsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomeloCardsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42FC3A629523B8D00ACA1D6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A42FC3A829523B8D00ACA1D6 /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
-		A42FC3AA29523B8D00ACA1D6 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		A42FC3AA29523B8D00ACA1D6 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		A42FC3AC29523B8D00ACA1D6 /* EndUserTokenResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenResolver.swift; sourceTree = "<group>"; };
 		A42FC3AD29523B8D00ACA1D6 /* UserEmailProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEmailProvider.swift; sourceTree = "<group>"; };
 		A42FC3AE29523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloAccessTokenDTO.swift; sourceTree = "<group>"; };
@@ -83,7 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				A42FC3A629523B8D00ACA1D6 /* HomeViewController.swift */,
-				A42FC3AA29523B8D00ACA1D6 /* CardController.swift */,
+				A42FC3AA29523B8D00ACA1D6 /* CardViewController.swift */,
+				850A34FC295639FA00C99647 /* CardStoryboardViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,11 +267,12 @@
 				850D18D52954B31300955E20 /* EndUserTokenAuthorizationService.swift in Sources */,
 				A42FC3C429523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift in Sources */,
 				850A34F62955ED7800C99647 /* WidgetViewControllerFactory.swift in Sources */,
-				A42FC3C129523B8D00ACA1D6 /* CardController.swift in Sources */,
+				A42FC3C129523B8D00ACA1D6 /* CardViewController.swift in Sources */,
 				A42FC3CE29523B8D00ACA1D6 /* SceneDelegate.swift in Sources */,
 				A42FC3BF29523B8D00ACA1D6 /* HomeViewController.swift in Sources */,
 				A42FC3C929523B8D00ACA1D6 /* BlueClientTheme.swift in Sources */,
 				A42FC3CC29523B8D00ACA1D6 /* WidgetType.swift in Sources */,
+				850A34FD295639FA00C99647 /* CardStoryboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,14 +52,26 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
         return widgetChangePinViewController
     }
     
+//    private func getCard(params: [String: Any]) -> UIViewController? {
+//
+//        guard let cardId = params["card_id"] as? String else { return nil }
+//        let widgetView = PomeloCardWidgetView(cardholderName: "Juan Perez",
+//                                              lastFourCardDigits: "3636",
+//                                              cardImage: UIImage(named: "TarjetaVirtual"))
+//        return CardController(cardWidgetView: widgetView, cardId: cardId)
+//
+//    }
+    
     private func getCard(params: [String: Any]) -> UIViewController? {
         
         guard let cardId = params["card_id"] as? String else { return nil }
-        let widgetView = PomeloCardWidgetView(cardholderName: "Juan Perez",
-                                              lastFourCardDigits: "3636",
-                                              cardImage: UIImage(named: "TarjetaVirtual"))
-        return CardController(cardWidgetView: widgetView, cardId: cardId)
-        
+        let cardViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "CardStoryboardViewController", creator: { coder in
+            return CardStoryboardViewController(coder: coder, cardId: cardId)
+        })
+        cardViewController.setupPomeloCardView(cardholderName: "Juan Perez",
+                                               lastFourCardDigits: "3636",
+                                               cardImage: UIImage(named: "TarjetaVirtual"))
+        return cardViewController
     }
     
     private func getCardList(params: [String: Any]) -> UIViewController? {
