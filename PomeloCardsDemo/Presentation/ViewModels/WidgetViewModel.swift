@@ -8,20 +8,30 @@ import UIKit
 import PomeloCards
 
 protocol WidgetViewModelProtocol {
-    func getWidgetController(for widget: WidgetType) -> UIViewController?
+    func widgetsCount() -> Int
     func configCell(_ cell: WidgetTableViewCell, widget: WidgetType)
+    func presentWidget(_ widget: WidgetType, on viewController: UIViewController)
+
 }
 
 class WidgetViewModel: WidgetViewModelProtocol {
     
     private var widgetsFactory: WidgetViewControllerFactoryProtocol = WidgetViewControllerFactory()
-     
-    func getWidgetController(for widget: WidgetType) -> UIViewController? {
-        widgetsFactory.buildWidgetController(for: widget, params: widget.getParams())
+    
+    func widgetsCount() -> Int {
+        WidgetType.count
     }
     
     func configCell(_ cell: WidgetTableViewCell, widget: WidgetType) {
         cell.titleLabel.text = widget.getTitle()
+    }
+
+    func presentWidget(_ widget: WidgetType, on viewController: UIViewController) {
+        guard let widgetViewController = widgetsFactory.buildWidgetController(for: widget, params: widget.getParams()) else {
+            print("Couldn't generate widget view controller for widget: \(widget)")
+            return
+        }
+        viewController.present(widgetViewController, animated: true)
     }
 }
 

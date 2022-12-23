@@ -10,7 +10,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var viewModel: WidgetViewModelProtocol = WidgetViewModel()
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegates()
@@ -30,21 +30,21 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { WidgetType.count }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { viewModel.widgetsCount() }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let widgetType = WidgetType(rawValue: indexPath.row),
-              let viewController = viewModel.getWidgetController(for: widgetType) else { return }
-        self.present(viewController, animated: true)
+        guard let widgetType = WidgetType(rawValue: indexPath.row) else { return }
+        viewModel.presentWidget(widgetType, on: self)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: WidgetTableViewCell.identifier,
-            for: indexPath
-        ) as? WidgetTableViewCell else { return WidgetTableViewCell() }
-        guard let widgetType = WidgetType(rawValue: indexPath.row) else { return WidgetTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WidgetTableViewCell.identifier,
+                                                       for: indexPath) as? WidgetTableViewCell,
+              let widgetType = WidgetType(rawValue: indexPath.row) else {
+            print("Couldn't generate cell at indexPath: \(indexPath)")
+            return WidgetTableViewCell()
+        }
         viewModel.configCell(cell, widget: widgetType)
         return cell
     }
