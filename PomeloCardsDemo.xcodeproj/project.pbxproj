@@ -7,38 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		852E73C729535BED0014360E /* FunctionConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E73C629535BED0014360E /* FunctionConverter.swift */; };
-		8533F3F4294B9734001B0B22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533F3F3294B9734001B0B22 /* AppDelegate.swift */; };
-		8533F3F6294B9734001B0B22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533F3F5294B9734001B0B22 /* SceneDelegate.swift */; };
-		8533F3F8294B9734001B0B22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533F3F7294B9734001B0B22 /* ViewController.swift */; };
-		8533F3FB294B9734001B0B22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8533F3F9294B9734001B0B22 /* Main.storyboard */; };
-		8533F3FD294B9735001B0B22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8533F3FC294B9735001B0B22 /* Assets.xcassets */; };
-		8533F400294B9735001B0B22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8533F3FE294B9735001B0B22 /* LaunchScreen.storyboard */; };
+		850D18D52954B31300955E20 /* EndUserTokenAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D18D42954B31300955E20 /* EndUserTokenAuthorizationService.swift */; };
+		850D18D82954B32900955E20 /* FunctionConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D18D72954B32900955E20 /* FunctionConverter.swift */; };
 		8533F409294BA1E6001B0B22 /* PomeloCards in Frameworks */ = {isa = PBXBuildFile; productRef = 8533F408294BA1E6001B0B22 /* PomeloCards */; };
-		858278F8294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278F7294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift */; };
-		858278FB294CFBC100CBAADF /* UserEmailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FA294CFBC100CBAADF /* UserEmailProvider.swift */; };
-		858278FD294CFC0C00CBAADF /* EndUserTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FC294CFC0C00CBAADF /* EndUserTokenResolver.swift */; };
-		858278FF294CFC1600CBAADF /* PomeloAccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858278FE294CFC1600CBAADF /* PomeloAccessTokenDTO.swift */; };
-		85FD57F82950B01200573078 /* PomeloTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD57F52950B01200573078 /* PomeloTheme.swift */; };
-		85FD57FA2950B01200573078 /* BlueClientTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD57F72950B01200573078 /* BlueClientTheme.swift */; };
+		A415717D29523E5300365B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42FC3B229523B8D00ACA1D6 /* LaunchScreen.storyboard */; };
+		A415717E29523E5A00365B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42FC3B429523B8D00ACA1D6 /* Main.storyboard */; };
+		A415717F29523E6800365B85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42FC3B129523B8D00ACA1D6 /* Assets.xcassets */; };
+		A42FC3BE29523B8D00ACA1D6 /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A529523B8D00ACA1D6 /* WidgetViewModel.swift */; };
+		A42FC3BF29523B8D00ACA1D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A629523B8D00ACA1D6 /* ViewController.swift */; };
+		A42FC3C029523B8D00ACA1D6 /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A829523B8D00ACA1D6 /* WidgetTableViewCell.swift */; };
+		A42FC3C129523B8D00ACA1D6 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AA29523B8D00ACA1D6 /* CardController.swift */; };
+		A42FC3C229523B8D00ACA1D6 /* EndUserTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AC29523B8D00ACA1D6 /* EndUserTokenResolver.swift */; };
+		A42FC3C329523B8D00ACA1D6 /* UserEmailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AD29523B8D00ACA1D6 /* UserEmailProvider.swift */; };
+		A42FC3C429523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AE29523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift */; };
+		A42FC3C929523B8D00ACA1D6 /* BlueClientTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3B729523B8D00ACA1D6 /* BlueClientTheme.swift */; };
+		A42FC3CA29523B8D00ACA1D6 /* PomeloTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3B829523B8D00ACA1D6 /* PomeloTheme.swift */; };
+		A42FC3CB29523B8D00ACA1D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3B929523B8D00ACA1D6 /* AppDelegate.swift */; };
+		A42FC3CC29523B8D00ACA1D6 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3BB29523B8D00ACA1D6 /* Enums.swift */; };
+		A42FC3CE29523B8D00ACA1D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3BD29523B8D00ACA1D6 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		852E73C629535BED0014360E /* FunctionConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionConverter.swift; sourceTree = "<group>"; };
+		850D18D42954B31300955E20 /* EndUserTokenAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenAuthorizationService.swift; sourceTree = "<group>"; };
+		850D18D72954B32900955E20 /* FunctionConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionConverter.swift; sourceTree = "<group>"; };
 		8533F3F0294B9734001B0B22 /* PomeloCardsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomeloCardsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8533F3F3294B9734001B0B22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8533F3F5294B9734001B0B22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8533F3F7294B9734001B0B22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8533F3FA294B9734001B0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8533F3FC294B9735001B0B22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8533F3FF294B9735001B0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8533F401294B9735001B0B22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		858278F7294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenAuthorizationService.swift; sourceTree = "<group>"; };
-		858278FA294CFBC100CBAADF /* UserEmailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailProvider.swift; sourceTree = "<group>"; };
-		858278FC294CFC0C00CBAADF /* EndUserTokenResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenResolver.swift; sourceTree = "<group>"; };
-		858278FE294CFC1600CBAADF /* PomeloAccessTokenDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloAccessTokenDTO.swift; sourceTree = "<group>"; };
-		85FD57F52950B01200573078 /* PomeloTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloTheme.swift; sourceTree = "<group>"; };
-		85FD57F72950B01200573078 /* BlueClientTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueClientTheme.swift; sourceTree = "<group>"; };
+		A42FC3A529523B8D00ACA1D6 /* WidgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetViewModel.swift; sourceTree = "<group>"; };
+		A42FC3A629523B8D00ACA1D6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A42FC3A829523B8D00ACA1D6 /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
+		A42FC3AA29523B8D00ACA1D6 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		A42FC3AC29523B8D00ACA1D6 /* EndUserTokenResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenResolver.swift; sourceTree = "<group>"; };
+		A42FC3AD29523B8D00ACA1D6 /* UserEmailProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEmailProvider.swift; sourceTree = "<group>"; };
+		A42FC3AE29523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloAccessTokenDTO.swift; sourceTree = "<group>"; };
+		A42FC3B129523B8D00ACA1D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A42FC3B329523B8D00ACA1D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A42FC3B529523B8D00ACA1D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A42FC3B729523B8D00ACA1D6 /* BlueClientTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueClientTheme.swift; sourceTree = "<group>"; };
+		A42FC3B829523B8D00ACA1D6 /* PomeloTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloTheme.swift; sourceTree = "<group>"; };
+		A42FC3B929523B8D00ACA1D6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A42FC3BB29523B8D00ACA1D6 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		A42FC3BC29523B8D00ACA1D6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A42FC3BD29523B8D00ACA1D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +61,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		852E73C529535BED0014360E /* Helpers */ = {
+		850D18D62954B32900955E20 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				852E73C629535BED0014360E /* FunctionConverter.swift */,
+				850D18D72954B32900955E20 /* FunctionConverter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -64,7 +72,7 @@
 		8533F3E7294B9734001B0B22 = {
 			isa = PBXGroup;
 			children = (
-				8533F3F2294B9734001B0B22 /* PomeloCardsDemo */,
+				A42FC3A329523B8D00ACA1D6 /* PomeloCardsDemo */,
 				8533F3F1294B9734001B0B22 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,49 +85,85 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8533F3F2294B9734001B0B22 /* PomeloCardsDemo */ = {
+		A42FC3A329523B8D00ACA1D6 /* PomeloCardsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8533F3F3294B9734001B0B22 /* AppDelegate.swift */,
-				8533F3F5294B9734001B0B22 /* SceneDelegate.swift */,
-				8533F3F7294B9734001B0B22 /* ViewController.swift */,
-				85FD57F42950B00700573078 /* Theme */,
-				858278F9294CFB9F00CBAADF /* Auth */,
-				8533F3F9294B9734001B0B22 /* Main.storyboard */,
-				8533F3FC294B9735001B0B22 /* Assets.xcassets */,
-				8533F3FE294B9735001B0B22 /* LaunchScreen.storyboard */,
-				8533F401294B9735001B0B22 /* Info.plist */,
+				A42FC3A429523B8D00ACA1D6 /* ViewModel */,
+				A42FC3A629523B8D00ACA1D6 /* ViewController.swift */,
+				A42FC3A729523B8D00ACA1D6 /* Cells */,
+				A42FC3A929523B8D00ACA1D6 /* WidgetControllers */,
+				A42FC3AB29523B8D00ACA1D6 /* Auth */,
+				A42FC3B129523B8D00ACA1D6 /* Assets.xcassets */,
+				A42FC3B229523B8D00ACA1D6 /* LaunchScreen.storyboard */,
+				A42FC3B429523B8D00ACA1D6 /* Main.storyboard */,
+				A42FC3B629523B8D00ACA1D6 /* Theme */,
+				A42FC3B929523B8D00ACA1D6 /* AppDelegate.swift */,
+				A42FC3BA29523B8D00ACA1D6 /* Helpers */,
+				A42FC3BC29523B8D00ACA1D6 /* Info.plist */,
+				A42FC3BD29523B8D00ACA1D6 /* SceneDelegate.swift */,
 			);
 			path = PomeloCardsDemo;
 			sourceTree = "<group>";
 		};
-		858278F9294CFB9F00CBAADF /* Auth */ = {
+		A42FC3A429523B8D00ACA1D6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				852E73C529535BED0014360E /* Helpers */,
-				85827900294CFC2200CBAADF /* Service */,
-				858278FA294CFBC100CBAADF /* UserEmailProvider.swift */,
-				858278FC294CFC0C00CBAADF /* EndUserTokenResolver.swift */,
-				858278FE294CFC1600CBAADF /* PomeloAccessTokenDTO.swift */,
+				A42FC3A529523B8D00ACA1D6 /* WidgetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A42FC3A729523B8D00ACA1D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC3A829523B8D00ACA1D6 /* WidgetTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A42FC3A929523B8D00ACA1D6 /* WidgetControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC3AA29523B8D00ACA1D6 /* CardController.swift */,
+			);
+			path = WidgetControllers;
+			sourceTree = "<group>";
+		};
+		A42FC3AB29523B8D00ACA1D6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC3AC29523B8D00ACA1D6 /* EndUserTokenResolver.swift */,
+				A42FC3AD29523B8D00ACA1D6 /* UserEmailProvider.swift */,
+				A42FC3AE29523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift */,
+				850D18D62954B32900955E20 /* Helpers */,
+				A42FC3AF29523B8D00ACA1D6 /* Service */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		85827900294CFC2200CBAADF /* Service */ = {
+		A42FC3AF29523B8D00ACA1D6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				858278F7294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift */,
+				850D18D42954B31300955E20 /* EndUserTokenAuthorizationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
 		};
-		85FD57F42950B00700573078 /* Theme */ = {
+		A42FC3B629523B8D00ACA1D6 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				85FD57F72950B01200573078 /* BlueClientTheme.swift */,
-				85FD57F52950B01200573078 /* PomeloTheme.swift */,
+				A42FC3B729523B8D00ACA1D6 /* BlueClientTheme.swift */,
+				A42FC3B829523B8D00ACA1D6 /* PomeloTheme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		A42FC3BA29523B8D00ACA1D6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC3BB29523B8D00ACA1D6 /* Enums.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +175,7 @@
 			buildPhases = (
 				8533F3EC294B9734001B0B22 /* Sources */,
 				8533F3ED294B9734001B0B22 /* Frameworks */,
-				8533F3EE294B9734001B0B22 /* Resources */,
+				A415717C29523E4800365B85 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -182,13 +226,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8533F3EE294B9734001B0B22 /* Resources */ = {
+		A415717C29523E4800365B85 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8533F400294B9735001B0B22 /* LaunchScreen.storyboard in Resources */,
-				8533F3FD294B9735001B0B22 /* Assets.xcassets in Resources */,
-				8533F3FB294B9734001B0B22 /* Main.storyboard in Resources */,
+				A415717F29523E6800365B85 /* Assets.xcassets in Resources */,
+				A415717E29523E5A00365B85 /* Main.storyboard in Resources */,
+				A415717D29523E5300365B85 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,36 +243,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				858278F8294CFB7800CBAADF /* EndUserTokenAuthorizationService.swift in Sources */,
-				8533F3F8294B9734001B0B22 /* ViewController.swift in Sources */,
-				8533F3F4294B9734001B0B22 /* AppDelegate.swift in Sources */,
-				85FD57F82950B01200573078 /* PomeloTheme.swift in Sources */,
-				852E73C729535BED0014360E /* FunctionConverter.swift in Sources */,
-				858278FF294CFC1600CBAADF /* PomeloAccessTokenDTO.swift in Sources */,
-				85FD57FA2950B01200573078 /* BlueClientTheme.swift in Sources */,
-				858278FB294CFBC100CBAADF /* UserEmailProvider.swift in Sources */,
-				858278FD294CFC0C00CBAADF /* EndUserTokenResolver.swift in Sources */,
-				8533F3F6294B9734001B0B22 /* SceneDelegate.swift in Sources */,
+				A42FC3CB29523B8D00ACA1D6 /* AppDelegate.swift in Sources */,
+				A42FC3C229523B8D00ACA1D6 /* EndUserTokenResolver.swift in Sources */,
+				A42FC3C029523B8D00ACA1D6 /* WidgetTableViewCell.swift in Sources */,
+				A42FC3CA29523B8D00ACA1D6 /* PomeloTheme.swift in Sources */,
+				A42FC3C329523B8D00ACA1D6 /* UserEmailProvider.swift in Sources */,
+				850D18D52954B31300955E20 /* EndUserTokenAuthorizationService.swift in Sources */,
+				A42FC3C429523B8D00ACA1D6 /* PomeloAccessTokenDTO.swift in Sources */,
+				A42FC3C129523B8D00ACA1D6 /* CardController.swift in Sources */,
+				850D18D82954B32900955E20 /* FunctionConverter.swift in Sources */,
+				A42FC3CE29523B8D00ACA1D6 /* SceneDelegate.swift in Sources */,
+				A42FC3BF29523B8D00ACA1D6 /* ViewController.swift in Sources */,
+				A42FC3C929523B8D00ACA1D6 /* BlueClientTheme.swift in Sources */,
+				A42FC3CC29523B8D00ACA1D6 /* Enums.swift in Sources */,
+				A42FC3BE29523B8D00ACA1D6 /* WidgetViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8533F3F9294B9734001B0B22 /* Main.storyboard */ = {
+		A42FC3B229523B8D00ACA1D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8533F3FA294B9734001B0B22 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8533F3FE294B9735001B0B22 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8533F3FF294B9735001B0B22 /* Base */,
+				A42FC3B329523B8D00ACA1D6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A42FC3B429523B8D00ACA1D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A42FC3B529523B8D00ACA1D6 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -433,7 +481,7 @@
 			repositoryURL = "git@github.com:pomelo-la/cards-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
+				minimumVersion = 0.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

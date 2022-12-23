@@ -24,7 +24,8 @@ class UserEmailProvider: UserEmailProviderProtocol {
     }
     
     func provideCurrentUserEmail() -> String? {
-        UserDefaults.standard.string(forKey: "Email")
+        return "juan.perez@pomelo.la"
+        //UserDefaults.standard.string(forKey: "Email")
     }
     
     func clearUserEmailSettings() {
