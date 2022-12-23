@@ -14,7 +14,7 @@
 		A415717E29523E5A00365B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42FC3B429523B8D00ACA1D6 /* Main.storyboard */; };
 		A415717F29523E6800365B85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42FC3B129523B8D00ACA1D6 /* Assets.xcassets */; };
 		A42FC3BE29523B8D00ACA1D6 /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A529523B8D00ACA1D6 /* WidgetViewModel.swift */; };
-		A42FC3BF29523B8D00ACA1D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A629523B8D00ACA1D6 /* ViewController.swift */; };
+		A42FC3BF29523B8D00ACA1D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A629523B8D00ACA1D6 /* HomeViewController.swift */; };
 		A42FC3C029523B8D00ACA1D6 /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3A829523B8D00ACA1D6 /* WidgetTableViewCell.swift */; };
 		A42FC3C129523B8D00ACA1D6 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AA29523B8D00ACA1D6 /* CardController.swift */; };
 		A42FC3C229523B8D00ACA1D6 /* EndUserTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FC3AC29523B8D00ACA1D6 /* EndUserTokenResolver.swift */; };
@@ -32,7 +32,7 @@
 		850D18D72954B32900955E20 /* FunctionConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionConverter.swift; sourceTree = "<group>"; };
 		8533F3F0294B9734001B0B22 /* PomeloCardsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomeloCardsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42FC3A529523B8D00ACA1D6 /* WidgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetViewModel.swift; sourceTree = "<group>"; };
-		A42FC3A629523B8D00ACA1D6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A42FC3A629523B8D00ACA1D6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A42FC3A829523B8D00ACA1D6 /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
 		A42FC3AA29523B8D00ACA1D6 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		A42FC3AC29523B8D00ACA1D6 /* EndUserTokenResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenResolver.swift; sourceTree = "<group>"; };
@@ -61,6 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		850A34F02955E9B500C99647 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A42FC3A629523B8D00ACA1D6 /* HomeViewController.swift */,
+				A42FC3A729523B8D00ACA1D6 /* Cells */,
+				A42FC3A929523B8D00ACA1D6 /* WidgetControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		850D18D62954B32900955E20 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +98,8 @@
 		A42FC3A329523B8D00ACA1D6 /* PomeloCardsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				850A34F02955E9B500C99647 /* UI */,
 				A42FC3A429523B8D00ACA1D6 /* ViewModel */,
-				A42FC3A629523B8D00ACA1D6 /* ViewController.swift */,
-				A42FC3A729523B8D00ACA1D6 /* Cells */,
-				A42FC3A929523B8D00ACA1D6 /* WidgetControllers */,
 				A42FC3AB29523B8D00ACA1D6 /* Auth */,
 				A42FC3B129523B8D00ACA1D6 /* Assets.xcassets */,
 				A42FC3B229523B8D00ACA1D6 /* LaunchScreen.storyboard */,
@@ -253,7 +261,7 @@
 				A42FC3C129523B8D00ACA1D6 /* CardController.swift in Sources */,
 				850D18D82954B32900955E20 /* FunctionConverter.swift in Sources */,
 				A42FC3CE29523B8D00ACA1D6 /* SceneDelegate.swift in Sources */,
-				A42FC3BF29523B8D00ACA1D6 /* ViewController.swift in Sources */,
+				A42FC3BF29523B8D00ACA1D6 /* HomeViewController.swift in Sources */,
 				A42FC3C929523B8D00ACA1D6 /* BlueClientTheme.swift in Sources */,
 				A42FC3CC29523B8D00ACA1D6 /* Enums.swift in Sources */,
 				A42FC3BE29523B8D00ACA1D6 /* WidgetViewModel.swift in Sources */,

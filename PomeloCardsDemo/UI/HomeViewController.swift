@@ -4,13 +4,12 @@
 //
 import UIKit
 
-class ViewController: UIViewController {
+/// Initial screen of the App
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private lazy var viewModel: WidgetViewModelProtocol = {
-        WidgetViewModel()
-    }()
+    private var viewModel: WidgetViewModelProtocol = WidgetViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +28,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate,
-                          UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 4 }
     
