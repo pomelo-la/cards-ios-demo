@@ -13,7 +13,9 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { WidgetType.count }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        WidgetType.count
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let widget = WidgetType(rawValue: indexPath.row),
@@ -29,7 +31,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WidgetTableViewCell.identifier,
                                                        for: indexPath) as? WidgetTableViewCell,
               let widget = WidgetType(rawValue: indexPath.row) else {
@@ -40,24 +41,3 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-
-extension WidgetType {
-    func getTitle() -> String {
-        switch self {
-        case .cardActivation: return "Activación de tarjeta"
-        case .changePin: return "Cambio de pin"
-        case .card: return "Tarjeta"
-        case .cardDetail: return "Datos de tarjeta"
-        }
-    }
-    
-    func getParams() -> [String: Any] {
-        switch self {
-        case .cardActivation: return [:]
-        case .changePin: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
-        case .card: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
-        case .cardDetail: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
-        }
-    }
-}
-    
