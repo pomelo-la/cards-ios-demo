@@ -8,7 +8,7 @@ import UIKit
 import PomeloCards
 
 protocol WidgetViewModelProtocol {
-    func launchWidgetController(by index: Int) -> UIViewController?
+    func getWidgetController(by index: Int) -> UIViewController?
 }
 
 class WidgetViewModel: WidgetViewModelProtocol {
@@ -17,13 +17,13 @@ class WidgetViewModel: WidgetViewModelProtocol {
     
     func getWidgetController(by index: Int) -> UIViewController? {
         switch index {
-        case CollectionViewCellTypes.cardActivation.rawValue:
+        case TableViewCellType.cardActivation.rawValue:
             return getActivationCardWidget()
-        case CollectionViewCellTypes.changePin.rawValue:
+        case TableViewCellType.changePin.rawValue:
             return getPinWidget()
-        case CollectionViewCellTypes.card.rawValue:
+        case TableViewCellType.card.rawValue:
             return getCard()
-        case CollectionViewCellTypes.cardDetail.rawValue:
+        case TableViewCellType.cardDetail.rawValue:
             return getCardList()
         default: return nil
         }

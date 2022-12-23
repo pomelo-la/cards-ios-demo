@@ -34,7 +34,7 @@ class WidgetTableViewCell: UITableViewCell {
         self.contentView.addSubview(titleLabel)
     }
     
-    public func configCell(_ type: CollectionViewCellTypes) {
+    public func configCell(_ type: TableViewCellType) {
         titleLabel.text = type.getTitle()
     }
     

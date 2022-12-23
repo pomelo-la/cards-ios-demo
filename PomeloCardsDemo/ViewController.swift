@@ -35,7 +35,7 @@ extension ViewController: UITableViewDelegate,
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 4 }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let viewController = viewModel.launchWidgetController(by: indexPath.row) else { return }
+        guard let viewController = viewModel.getWidgetController(by: indexPath.row) else { return }
         self.present(viewController, animated: true)
     }
     
@@ -45,17 +45,8 @@ extension ViewController: UITableViewDelegate,
             withIdentifier: WidgetTableViewCell.identifier,
             for: indexPath
         ) as? WidgetTableViewCell else { return WidgetTableViewCell() }
-        switch indexPath.row {
-            case CollectionViewCellTypes.cardActivation.rawValue:
-                cell.configCell(.cardActivation)
-            case CollectionViewCellTypes.changePin.rawValue:
-                cell.configCell(.changePin)
-            case CollectionViewCellTypes.card.rawValue:
-                cell.configCell(.card)
-            case CollectionViewCellTypes.cardDetail.rawValue:
-                cell.configCell(.cardDetail)
-        default: break
-        }
+        guard let type = TableViewCellType(rawValue: indexPath.row) else { return WidgetTableViewCell() }
+        cell.configCell(type)
         return cell
     }
 }
