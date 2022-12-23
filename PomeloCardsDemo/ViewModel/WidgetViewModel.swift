@@ -15,7 +15,7 @@ class WidgetViewModel: WidgetViewModelProtocol {
     
     private let params: [String: Any] = ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
     
-    func launchWidgetController(by index: Int) -> UIViewController? {
+    func getWidgetController(by index: Int) -> UIViewController? {
         switch index {
         case CollectionViewCellTypes.cardActivation.rawValue:
             return getActivationCardWidget()
