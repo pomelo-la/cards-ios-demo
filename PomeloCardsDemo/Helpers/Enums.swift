@@ -5,7 +5,7 @@
 import Foundation
 import UIKit
 
-enum CollectionViewCellTypes: Int {
+enum TableViewCellType: Int {
     case cardActivation = 0
     case changePin = 1
     case card = 2
