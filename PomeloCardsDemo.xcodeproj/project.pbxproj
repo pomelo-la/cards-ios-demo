@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		850A34F62955ED7800C99647 /* WidgetViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850A34F52955ED7800C99647 /* WidgetViewControllerFactory.swift */; };
-		850A34FB2955F0F000C99647 /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850A34FA2955F0F000C99647 /* WidgetViewModel.swift */; };
 		850D18D52954B31300955E20 /* EndUserTokenAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D18D42954B31300955E20 /* EndUserTokenAuthorizationService.swift */; };
 		8533F409294BA1E6001B0B22 /* PomeloCards in Frameworks */ = {isa = PBXBuildFile; productRef = 8533F408294BA1E6001B0B22 /* PomeloCards */; };
 		A415717D29523E5300365B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42FC3B229523B8D00ACA1D6 /* LaunchScreen.storyboard */; };
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		850A34F52955ED7800C99647 /* WidgetViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewControllerFactory.swift; sourceTree = "<group>"; };
-		850A34FA2955F0F000C99647 /* WidgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetViewModel.swift; sourceTree = "<group>"; };
 		850D18D42954B31300955E20 /* EndUserTokenAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenAuthorizationService.swift; sourceTree = "<group>"; };
 		8533F3F0294B9734001B0B22 /* PomeloCardsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomeloCardsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42FC3A629523B8D00ACA1D6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -106,22 +104,6 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		850A34F82955F0D900C99647 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				850A34F92955F0E600C99647 /* ViewModels */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		850A34F92955F0E600C99647 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				850A34FA2955F0F000C99647 /* WidgetViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		8533F3E7294B9734001B0B22 = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				850A34F72955EE5300C99647 /* Domain */,
-				850A34F82955F0D900C99647 /* Presentation */,
 				850A34F02955E9B500C99647 /* UI */,
 				A42FC3AB29523B8D00ACA1D6 /* Auth */,
 				850A34F12955EBD600C99647 /* Resources */,
@@ -275,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				850A34FB2955F0F000C99647 /* WidgetViewModel.swift in Sources */,
 				A42FC3CB29523B8D00ACA1D6 /* AppDelegate.swift in Sources */,
 				A42FC3C229523B8D00ACA1D6 /* EndUserTokenResolver.swift in Sources */,
 				A42FC3C029523B8D00ACA1D6 /* WidgetTableViewCell.swift in Sources */,
