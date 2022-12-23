@@ -31,7 +31,11 @@ class WidgetViewModel: WidgetViewModelProtocol {
             print("Couldn't generate widget view controller for widget: \(widget)")
             return
         }
-        viewController.present(widgetViewController, animated: true)
+        if widget == .cardDetail {
+            viewController.displayViewControllerAsBottomSheet(widgetViewController)
+        } else {
+            viewController.present(widgetViewController, animated: true)
+        }
     }
 }
 

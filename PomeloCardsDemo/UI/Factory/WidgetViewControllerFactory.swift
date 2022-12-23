@@ -55,9 +55,9 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
     private func getCard(params: [String: Any]) -> UIViewController? {
         
         guard let cardId = params["card_id"] as? String else { return nil }
-        let widgetView = PomeloCardWidgetView(settings: PomeloCardWidgetViewSettings(cardholderName: "Juan Perez",
-                                                                         lastFourCardDigits: "3636",
-                                                                         cardImage: UIImage(named: "TarjetaVirtual")))
+        let widgetView = PomeloCardWidgetView(cardholderName: "Juan Perez",
+                                              lastFourCardDigits: "3636",
+                                              cardImage: UIImage(named: "TarjetaVirtual"))
         return CardController(cardWidgetView: widgetView, cardId: cardId)
         
     }
@@ -65,7 +65,7 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
     private func getCardList(params: [String: Any]) -> UIViewController? {
         guard let cardId = params["card_id"] as? String else { return nil }
         let widgetDetailViewController = PomeloCardWidgetDetailViewController()
-        widgetDetailViewController.loadSensitiveData(cardId: cardId, onPanCopy: {
+        widgetDetailViewController.showSensitiveData(cardId: cardId, onPanCopy: {
             print("Pan was coppied")
         }, completionHandler: { result in
             switch result {

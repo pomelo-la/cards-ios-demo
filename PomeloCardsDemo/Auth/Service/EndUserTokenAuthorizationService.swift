@@ -21,28 +21,21 @@ class EndUserTokenAuthorizationService: PomeloAuthorizationServiceProtocol {
         self.endUserTokenResolver = endUserTokenResolver
     }
     
-    /// Function that returns a valid end user token. This function is sync, usually this token is provided by a backend asynchronously. Here is an example of how you can implement it by using out `FunctionConverter`
-    /// - Returns: End user token
-    func getValidToken() -> String {
-        return FunctionConverter.asyncToSync(function: getUserToken) ?? ""
-    }
-    
-    
-    /// Funtion that gets a valid token from a service asynchronously
-    /// - Parameter completion: A closure that returns a end user token if it was able to retrieve one
-    private func getUserToken(completion: @escaping (String?) -> Void) {
+    /// Funtion that gets a valid token from a service asynchronously. Method required by `PomeloAuthorizationServiceProtocol`
+    /// - Parameter completionHandler: A closure that returns a end user token if it was able to retrieve one
+    func getValidToken(completionHandler: @escaping (String?) -> Void) {
         guard let userEmail = self.emailProvider.provideCurrentUserEmail() else {
             print("Cards Sample App error!🔥 - UserTokenService: Couldn't get user email")
-            completion(nil)
+            completionHandler(nil)
             return
         }
         self.endUserTokenResolver.resolve(email: userEmail) { endUserToken in
             guard let endUserToken = endUserToken else {
                 print("Cards Sample App error!🔥 Cannot obtain user token")
-                completion(nil)
+                completionHandler(nil)
                 return
             }
-            completion(endUserToken)
+            completionHandler(endUserToken)
         }
     }
 }
