@@ -6,26 +6,9 @@ import UIKit
 
 /// Initial screen of the App
 class HomeViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
-    
+
     private let widgetsFactory = WidgetViewControllerFactory()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupDelegates()
-        registerCells()
-    }
-    
-    private func registerCells() {
-        tableView.register(WidgetTableViewCell.self,
-                           forCellReuseIdentifier: WidgetTableViewCell.identifier)
-    }
-    
-    private func setupDelegates() {
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
