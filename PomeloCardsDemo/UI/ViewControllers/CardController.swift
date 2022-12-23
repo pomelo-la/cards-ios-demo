@@ -6,6 +6,7 @@
 import Foundation
 import UIKit
 import PomeloCards
+import PomeloUI
 
 /// Example - ViewController that contains the view `PomeloCardWidgetView`
 class CardController: UIViewController {
@@ -58,7 +59,7 @@ class CardController: UIViewController {
     }
     
     private func setupUI() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = PomeloUIGateway.shared.theme.colors.background
     }
     
     private func buildViewHierarchy() {

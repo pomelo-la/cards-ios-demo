@@ -11,7 +11,7 @@ class WidgetTableViewCell: UITableViewCell {
     
     static let identifier = "WidgetTableViewCell"
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = PomeloUIGateway.shared.theme.colors.primary
@@ -32,10 +32,6 @@ class WidgetTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         self.accessoryType = .disclosureIndicator
         self.contentView.addSubview(titleLabel)
-    }
-    
-    public func configCell(_ type: TableViewCellType) {
-        titleLabel.text = type.getTitle()
     }
     
     private func setupConstraints() {
