@@ -16,3 +16,23 @@ extension WidgetType: CaseIterable {
         allCases.count
     }()
 }
+
+extension WidgetType {
+    func getTitle() -> String {
+        switch self {
+        case .cardActivation: return "Activación de tarjeta"
+        case .changePin: return "Cambio de pin"
+        case .card: return "Tarjeta"
+        case .cardDetail: return "Datos de tarjeta"
+        }
+    }
+    
+    func getParams() -> [String: Any] {
+        switch self {
+        case .cardActivation: return [:]
+        case .changePin: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
+        case .card: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
+        case .cardDetail: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
+        }
+    }
+}

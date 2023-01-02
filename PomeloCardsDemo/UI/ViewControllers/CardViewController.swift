@@ -1,5 +1,5 @@
 //
-//  CardController.swift
+//  CardViewController.swift
 //  PomeloCardsDemo
 //
 
@@ -9,7 +9,7 @@ import PomeloCards
 import PomeloUI
 
 /// Example - ViewController that contains the view `PomeloCardWidgetView`
-class CardController: UIViewController {
+class CardViewController: UIViewController {
     let cardWidgetView: PomeloCardWidgetView
     let cardId: String
 
