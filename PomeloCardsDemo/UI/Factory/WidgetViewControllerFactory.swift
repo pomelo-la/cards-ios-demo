@@ -41,7 +41,7 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
     }
     
     private func getPinWidget(params: [String: Any]) -> UIViewController? {
-        guard let cardId = params["card_id"] as? String else { return nil }
+        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
         let widgetChangePinViewController = PomeloWidgetChangePinViewController(cardId: cardId, completionHandler: { result in
             switch result {
             case .success(): break
@@ -54,7 +54,7 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
     
     private func getCard(params: [String: Any]) -> UIViewController? {
         
-        guard let cardId = params["card_id"] as? String else { return nil }
+        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
         let widgetView = PomeloCardWidgetView(cardholderName: "Juan Perez",
                                               lastFourCardDigits: "3636",
                                               cardImage: UIImage(named: "TarjetaVirtual"))
@@ -63,7 +63,7 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
     }
     
     private func getCardList(params: [String: Any]) -> UIViewController? {
-        guard let cardId = params["card_id"] as? String else { return nil }
+        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
         let widgetDetailViewController = PomeloCardWidgetDetailViewController()
         widgetDetailViewController.showSensitiveData(cardId: cardId, onPanCopy: {
             print("Pan was coppied")

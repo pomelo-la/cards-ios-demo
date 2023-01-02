@@ -71,14 +71,13 @@ class UserEmailEndUserTokenResolver: UserEmailEndUserTokenResolverProtocol {
 
 
 fileprivate extension String {
-    static let userTokenError = "Cards Sample App error!🔥 - EndUserTokenService: "
+    static let userTokenError = "Cards Demo App error!🔥 - EndUserTokenService: "
 
     struct AuthHeaders {
         static let contentType = "Content-Type"
     }
     
     struct BodyParams {
-        static let userId = "user_id"
         static let email = "email"
     }
 }
