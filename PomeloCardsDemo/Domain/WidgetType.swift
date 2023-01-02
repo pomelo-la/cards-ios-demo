@@ -30,9 +30,20 @@ extension WidgetType {
     func getParams() -> [String: Any] {
         switch self {
         case .cardActivation: return [:]
-        case .changePin: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
-        case .card: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
-        case .cardDetail: return ["card_id": "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"]
+        case .changePin: return [WidgetParams.cardId: String.Params.cardId]
+        case .card: return [WidgetParams.cardId: String.Params.cardId]
+        case .cardDetail: return [WidgetParams.cardId: String.Params.cardId]
         }
+    }
+}
+
+struct WidgetParams {
+    static let cardId = "card_id"
+}
+
+fileprivate extension String {
+    struct Params {
+        /// Hardcoded test user card id
+        static let cardId = "crd-2H0AxFMF5XJGQqc6iSpUzMUS7Z3"
     }
 }
