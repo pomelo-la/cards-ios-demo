@@ -22,7 +22,7 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
         case .changePin:
             return getPinWidget(params: params)
         case .card:
-            return getCard(params: params)
+            return getStoryboardCard(params: params)
         case .cardDetail:
             return getCardList(params: params)
         }
@@ -52,25 +52,33 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
         return widgetChangePinViewController
     }
     
-//    private func getCard(params: [String: Any]) -> UIViewController? {
-//
-//        guard let cardId = params["card_id"] as? String else { return nil }
-//        let widgetView = PomeloCardWidgetView(cardholderName: "Juan Perez",
-//                                              lastFourCardDigits: "3636",
-//                                              cardImage: UIImage(named: "TarjetaVirtual"))
-//        return CardController(cardWidgetView: widgetView, cardId: cardId)
-//
-//    }
     
+    /// Creates a `CardViewController` with a `PomeloCardWidgetView` inside. It shows how the client could create a ViewController with a `PomeloCardWidgetView` view by code.
+    /// - Parameter params: Params required to create the view controller, Only the cardId is required
+    /// - Returns: A `CardViewController` if it was able to generate one.
     private func getCard(params: [String: Any]) -> UIViewController? {
+
+        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
+        let widgetView = PomeloCardWidgetView(cardholderName: "Juan Perez",
+                                              lastFourCardDigits: "3636",
+                                              cardImage: UIImage(named: "TarjetaVirtual"))
+        return CardViewController(cardWidgetView: widgetView, cardId: cardId)
+
+    }
+    
+    /// Creates a `CardStoryboardViewController` with a `PomeloCardWidgetView` inside. It shows how the client could create a ViewController with a `PomeloCardWidgetView` view using a storyboard.
+    /// - Parameter params: Params required to create the view controller, Only the cardId is required
+    /// - Returns: A `CardStoryboardViewController` if it was able to generate one.
+    private func getStoryboardCard(params: [String: Any]) -> UIViewController? {
         
         guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
         let cardViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "CardStoryboardViewController", creator: { coder in
-            return CardStoryboardViewController(coder: coder, cardId: cardId)
+            return CardStoryboardViewController(coder: coder,
+                                                cardId: cardId,
+                                                cardholderName: "Juan Perez",
+                                                lastFourCardDigits: "3636",
+                                                cardImage:UIImage(named: "TarjetaVirtual"))
         })
-        cardViewController.setupPomeloCardView(cardholderName: "Juan Perez",
-                                               lastFourCardDigits: "3636",
-                                               cardImage: UIImage(named: "TarjetaVirtual"))
         return cardViewController
     }
     

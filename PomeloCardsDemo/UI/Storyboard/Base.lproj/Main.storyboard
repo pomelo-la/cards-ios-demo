@@ -104,7 +104,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pomeloCardView" destination="lhc-9y-VMm" id="TXS-KT-Nw1"/>
+                        <outlet property="pomeloCardView" destination="lhc-9y-VMm" id="2oJ-p1-L0Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vy-NP-co8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

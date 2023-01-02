@@ -13,9 +13,19 @@ import PomeloUI
 /// Example - ViewController that contains the view `PomeloCardWidgetView`
 class CardStoryboardViewController: UIViewController {
     var cardId: String
+    var cardholderName: String
+    var lastFourCardDigits: String
+    var cardImage: UIImage?
     
-    init?(coder: NSCoder, cardId: String) {
+    init?(coder: NSCoder,
+          cardId: String,
+          cardholderName: String,
+          lastFourCardDigits: String,
+          cardImage: UIImage?) {
         self.cardId = cardId
+        self.cardholderName = cardholderName
+        self.lastFourCardDigits = lastFourCardDigits
+        self.cardImage = cardImage
         super.init(coder: coder)
     }
     
@@ -38,12 +48,6 @@ class CardStoryboardViewController: UIViewController {
         })
     }
     
-    func setupPomeloCardView(cardholderName: String,
-                             lastFourCardDigits: String,
-                             cardImage: UIImage? = nil) {
-        // Configure Pomelo card view
-    }
-    
     // MARK: - ViewController Lifecycle
     
     override func viewDidLoad() {
@@ -53,6 +57,9 @@ class CardStoryboardViewController: UIViewController {
     
     private func setupView() {
         self.view.backgroundColor = PomeloUIGateway.shared.theme.colors.background
+        self.pomeloCardView.setup(cardholderName: cardholderName,
+                                  lastFourCardDigits: lastFourCardDigits,
+                                  cardImage: cardImage,
+                                  parentViewController: self)
     }
 }
-
