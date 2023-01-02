@@ -24,13 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //Configure authorization service on PomeloNetworking
         PomeloNetworkConfigurator.shared.configure(authorizationService: EndUserTokenAuthorizationService())
         //Configure theme on PomeloUI
-        PomeloUIGateway.shared.initialize()
-        changeTheme(to: BlueClientTheme())
+        PomeloUIGateway.shared.configure(theme: BlueClientTheme())
     }
-    
-    private func changeTheme(to theme: PomeloThemeable) {
-        PomeloUIGateway.shared.configure(theme: theme)
-    }
-
 }
 
