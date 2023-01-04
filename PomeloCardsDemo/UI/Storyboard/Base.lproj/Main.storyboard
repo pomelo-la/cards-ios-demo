@@ -69,6 +69,48 @@
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="4.9295774647887329"/>
         </scene>
+        <!--Card Storyboard View Controller-->
+        <scene sceneID="7KA-Mm-lbO">
+            <objects>
+                <viewController storyboardIdentifier="CardStoryboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="02y-51-RGh" customClass="CardStoryboardViewController" customModule="PomeloCardsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fKM-Cf-Naa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhc-9y-VMm" customClass="PomeloCardWidgetView" customModule="PomeloCards">
+                                <rect key="frame" x="16" y="338.66666666666669" width="361" height="200.00000000000006"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Mzl-dV-azA"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gg6-Hy-r1Z">
+                                <rect key="frame" x="130" y="558.66666666666663" width="133" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Mostrar Datos"/>
+                                <connections>
+                                    <action selector="showCardData" destination="02y-51-RGh" eventType="touchUpInside" id="uc8-da-BAr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tc2-Ey-3n8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lhc-9y-VMm" firstAttribute="leading" secondItem="Tc2-Ey-3n8" secondAttribute="leading" constant="16" id="7f6-fH-Mm8"/>
+                            <constraint firstItem="Gg6-Hy-r1Z" firstAttribute="centerX" secondItem="Tc2-Ey-3n8" secondAttribute="centerX" id="Qvg-Td-oKU"/>
+                            <constraint firstItem="lhc-9y-VMm" firstAttribute="centerY" secondItem="Tc2-Ey-3n8" secondAttribute="centerY" id="l8c-5T-9jO"/>
+                            <constraint firstItem="Tc2-Ey-3n8" firstAttribute="trailing" secondItem="lhc-9y-VMm" secondAttribute="trailing" constant="16" id="laB-yY-dXq"/>
+                            <constraint firstItem="Gg6-Hy-r1Z" firstAttribute="top" secondItem="lhc-9y-VMm" secondAttribute="bottom" constant="20" id="pAM-EL-mPp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pomeloCardView" destination="lhc-9y-VMm" id="2oJ-p1-L0Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vy-NP-co8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962.59541984732823" y="4.9295774647887329"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
