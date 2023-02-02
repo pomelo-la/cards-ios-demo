@@ -1,6 +1,6 @@
 # PomeloCards iOS SDK
 
-![Pomelo banner](Documentation/Assets/cover.jpg)
+![cover](https://user-images.githubusercontent.com/100163572/216343121-17ae2657-f769-4253-9f62-dae0461899c9.jpeg)
 
 <!-- You can make your own custom badges from https://shields.io/ -->
 [![Swift](https://img.shields.io/badge/Swift-5.6-orange)](https://img.shields.io/badge/Swift-5.3_5.4_5.5-Orange)
