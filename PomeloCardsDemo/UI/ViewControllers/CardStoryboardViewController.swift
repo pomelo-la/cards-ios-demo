@@ -59,7 +59,7 @@ class CardStoryboardViewController: UIViewController {
         self.view.backgroundColor = PomeloUIGateway.shared.theme.colors.background
         self.pomeloCardView.setup(cardholderName: cardholderName,
                                   lastFourCardDigits: lastFourCardDigits,
-                                  cardImage: cardImage,
+                                  imageFetcher: PomeloImageFetcher(image: cardImage ?? UIImage()),
                                   parentViewController: self)
     }
 }

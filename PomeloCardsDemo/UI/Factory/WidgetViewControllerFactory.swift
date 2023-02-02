@@ -61,7 +61,7 @@ class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
         guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
         let widgetView = PomeloCardWidgetView(cardholderName: "Juan Perez",
                                               lastFourCardDigits: "3636",
-                                              cardImage: UIImage(named: "TarjetaVirtual"))
+                                              imageFetcher: PomeloImageFetcher(image: UIImage(named: "TarjetaVirtual")!))
         return CardViewController(cardWidgetView: widgetView, cardId: cardId)
 
     }

@@ -493,7 +493,7 @@
 			repositoryURL = "git@github.com:pomelo-la/cards-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.1;
+				minimumVersion = 0.2.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
