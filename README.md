@@ -244,9 +244,11 @@ class PomeloCardWidgetView: UIView
 
 ``` swift
 init(
-    cardholderName: String, 
-    lastFourCardDigits: String, 
-    cardImage: UIImage?, 
+    cardholderName: String,
+    lastFourCardDigits: String,
+    imageFetcher: PomeloUIImageFetchable,
+    copyButtonIcon: UIImage? = UIImage(systemName: "doc.on.doc"),
+    fontTextColor: UIColor? = nil,
     parentViewController: UIViewController? = nil
     )
 ```
@@ -257,8 +259,11 @@ Initialize the widget with its content.
 | ------------- | ------------- |
 | **cardholderName**: String | Card holder name. It will be shown as upper case. |
 | **lastFourCardDigits**: String | The last four digits of the card to be shown  |
-| **cardImage**: UIImage? | (Optional) The background card image. The background is clear by default. |
+| **imageFetcher**: UIImage? | (Optional) The background card image. The background is clear by default. |
+| **copyButtonIcon**: UIImage? | The copy data icon |
+| **fontTextColor: UIColor?** | (optional) the color of the font. You can select the font color but if you dont, the font its going to be white with dark background or black with lighter background automatically |
 | **parentViewController**: UIVIewController? | (Optional) The parent view controller that contains the cardView. **If it is provided it will be used to display an alert with retry logic in case the service fails.** |
+
 
 ###### showSensitiveData
 
