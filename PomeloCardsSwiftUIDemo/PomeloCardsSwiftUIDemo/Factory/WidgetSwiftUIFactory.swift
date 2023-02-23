@@ -9,78 +9,80 @@ import Foundation
 import SwiftUI
 import PomeloCards
 
-struct WidgetView: UIViewControllerRepresentable {
-    typealias UIViewControllerType = UIViewController
+protocol WidgetSwiftUIFactoryProtocol {
+    func buildWidgetController(for widget: WidgetType, params: [String: Any]) -> WidgetView
+}
+
+class WidgetSwiftUIFactory: WidgetSwiftUIFactoryProtocol {
+    func buildWidgetController(for widget: WidgetType, params: [String: Any]) -> WidgetView {
+        WidgetView(widget: widget, params: widget.getParams())
+    }
+}
+
+struct WidgetView: View {
     let widget: WidgetType
     let params: [String: Any]
-    let factory: WidgetViewControllerFactoryProtocol = WidgetViewControllerFactory()
     
-    func makeUIViewController(context: Context) -> UIViewController {
-        let vc = factory.buildWidgetController(for: widget, params: params)
-        return vc ?? UIViewController()
+    var body: some View {
+        Group {
+            switch widget {
+            case .cardActivation: PomeloCardsActivationWidget(params: params, completionHandler: { result in
+                switch result {
+                case .success(let cardId):
+                    print("Card was activated. Card id: \(String(describing: cardId))")
+                case .failure(let error):
+                    print("Activate card error: \(error)")
+                }
+            })
+            case .changePin: PomeloCardsPinWidget(params: params, completionHandler: { result in
+                switch result {
+                case .success(): break
+                case .failure(let error):
+                    print("Change pin error: \(error)")
+                }
+            })
+            #warning("Should implement other widgets")
+            default: EmptyView()
+            }
+        }
+    }
+}
+
+// MARK: - Views that will be publicly available on Cards SDK
+
+struct PomeloCardsActivationWidget: UIViewControllerRepresentable {
+    typealias UIViewControllerType = PomeloWidgetCardActivationViewController
+    let params: [String: Any]
+    let completionHandler: (Result<String?, PomeloError>) -> Void
+    
+    func makeUIViewController(context: Context) -> PomeloWidgetCardActivationViewController {
+        let widgetCardActivationViewController =  PomeloWidgetCardActivationViewController(completionHandler: completionHandler)
+        return widgetCardActivationViewController
     }
     
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: PomeloWidgetCardActivationViewController, context: Context) {
         // Updates the state of the specified view controller with new information from SwiftUI.
     }
 }
 
-protocol WidgetViewControllerFactoryProtocol {
-    func buildWidgetController(for widget: WidgetType, params: [String: Any]) -> UIViewController?
-}
-
-class WidgetViewControllerFactory: WidgetViewControllerFactoryProtocol {
+struct PomeloCardsPinWidget: UIViewControllerRepresentable {
+    typealias UIViewControllerType = PomeloWidgetChangePinViewController
+    let params: [String: Any]
+    let completionHandler: (Result<Void, PomeloError>) -> Void
     
-    func buildWidgetController(for widget: WidgetType, params: [String: Any]) -> UIViewController? {
-        switch widget {
-        case .cardActivation:
-            return getActivationCardWidget(params: params)
-        case .changePin:
-            return getPinWidget(params: params)
-        case .card:
-            #warning("Must add this view created in SwiftUI")
-            return nil
-        case .cardDetail:
-            return getCardList(params: params)
-        }
+    init?(params: [String : Any], completionHandler: @escaping (Result<Void, PomeloError>) -> Void) {
+        guard params[WidgetParams.cardId] is String else { return nil }
+        self.params = params
+        self.completionHandler = completionHandler
     }
     
-    private func getActivationCardWidget(params: [String: Any]) -> UIViewController? {
-        let widgetCardActivationViewController =  PomeloWidgetCardActivationViewController(completionHandler: { result in
-            switch result {
-            case .success(let cardId):
-                print("Card was activated. Card id: \(String(describing: cardId))")
-            case .failure(let error):
-                print("Activate card error: \(error)")
-            }
-        })
-        return widgetCardActivationViewController
-    }
-    
-    private func getPinWidget(params: [String: Any]) -> UIViewController? {
-        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
-        let widgetChangePinViewController = PomeloWidgetChangePinViewController(cardId: cardId, completionHandler: { result in
-            switch result {
-            case .success(): break
-            case .failure(let error):
-                print("Change pin error: \(error)")
-            }
-        })
+    func makeUIViewController(context: Context) -> PomeloWidgetChangePinViewController {
+        let cardId = params[WidgetParams.cardId] as! String
+        let widgetChangePinViewController = PomeloWidgetChangePinViewController(cardId: cardId, completionHandler: completionHandler)
         return widgetChangePinViewController
     }
     
-    private func getCardList(params: [String: Any]) -> UIViewController? {
-        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
-        let widgetDetailViewController = PomeloCardWidgetDetailViewController()
-        widgetDetailViewController.showSensitiveData(cardId: cardId, onPanCopy: {
-            print("Pan was coppied")
-        }, completionHandler: { result in
-            switch result {
-            case .success(): break
-            case .failure(let error):
-                print("Sensitive data error: \(error)")
-            }
-        })
-        return widgetDetailViewController
+    func updateUIViewController(_ uiViewController: PomeloWidgetChangePinViewController, context: Context) {
+        // Updates the state of the specified view controller with new information from SwiftUI.
     }
 }
