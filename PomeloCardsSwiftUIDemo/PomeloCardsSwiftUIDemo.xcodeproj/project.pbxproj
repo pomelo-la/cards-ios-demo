@@ -7,16 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8525711D29A7D81100A7D9DD /* PomeloCards in Frameworks */ = {isa = PBXBuildFile; productRef = 8525711C29A7D81100A7D9DD /* PomeloCards */; };
+		8525712029A7D87C00A7D9DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525711F29A7D87C00A7D9DD /* AppDelegate.swift */; };
+		8525713129A7D90B00A7D9DD /* BlueClientTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525712F29A7D90B00A7D9DD /* BlueClientTheme.swift */; };
+		8525713229A7D90B00A7D9DD /* PomeloTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525713029A7D90B00A7D9DD /* PomeloTheme.swift */; };
+		8525713829A7D95800A7D9DD /* EndUserTokenAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525713529A7D95800A7D9DD /* EndUserTokenAuthorizationService.swift */; };
+		8525713929A7D95800A7D9DD /* EndUserTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525713629A7D95800A7D9DD /* EndUserTokenResolver.swift */; };
+		8525713A29A7D95800A7D9DD /* PomeloAccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525713729A7D95800A7D9DD /* PomeloAccessTokenDTO.swift */; };
+		8525713D29A7DA2800A7D9DD /* WidgetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525713C29A7DA2800A7D9DD /* WidgetType.swift */; };
+		8525714029A7DD2800A7D9DD /* WidgetSwiftUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525713F29A7DD2800A7D9DD /* WidgetSwiftUIFactory.swift */; };
 		85716C6F29A7C2C9007BD9C5 /* PomeloCardsSwiftUIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85716C6E29A7C2C9007BD9C5 /* PomeloCardsSwiftUIDemoApp.swift */; };
-		85716C7129A7C2C9007BD9C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85716C7029A7C2C9007BD9C5 /* ContentView.swift */; };
+		85716C7129A7C2C9007BD9C5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85716C7029A7C2C9007BD9C5 /* HomeView.swift */; };
 		85716C7329A7C2CA007BD9C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85716C7229A7C2CA007BD9C5 /* Assets.xcassets */; };
 		85716C7629A7C2CA007BD9C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85716C7529A7C2CA007BD9C5 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8525711F29A7D87C00A7D9DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8525712F29A7D90B00A7D9DD /* BlueClientTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueClientTheme.swift; sourceTree = "<group>"; };
+		8525713029A7D90B00A7D9DD /* PomeloTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloTheme.swift; sourceTree = "<group>"; };
+		8525713529A7D95800A7D9DD /* EndUserTokenAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenAuthorizationService.swift; sourceTree = "<group>"; };
+		8525713629A7D95800A7D9DD /* EndUserTokenResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenResolver.swift; sourceTree = "<group>"; };
+		8525713729A7D95800A7D9DD /* PomeloAccessTokenDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloAccessTokenDTO.swift; sourceTree = "<group>"; };
+		8525713C29A7DA2800A7D9DD /* WidgetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetType.swift; sourceTree = "<group>"; };
+		8525713F29A7DD2800A7D9DD /* WidgetSwiftUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSwiftUIFactory.swift; sourceTree = "<group>"; };
 		85716C6B29A7C2C9007BD9C5 /* PomeloCardsSwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomeloCardsSwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85716C6E29A7C2C9007BD9C5 /* PomeloCardsSwiftUIDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeloCardsSwiftUIDemoApp.swift; sourceTree = "<group>"; };
-		85716C7029A7C2C9007BD9C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		85716C7029A7C2C9007BD9C5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		85716C7229A7C2CA007BD9C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85716C7529A7C2CA007BD9C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -26,12 +43,73 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8525711D29A7D81100A7D9DD /* PomeloCards in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8525711E29A7D87200A7D9DD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8525711F29A7D87C00A7D9DD /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8525712129A7D89800A7D9DD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				85716C7029A7C2C9007BD9C5 /* HomeView.swift */,
+				8525712229A7D89F00A7D9DD /* Theme */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8525712229A7D89F00A7D9DD /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				8525712F29A7D90B00A7D9DD /* BlueClientTheme.swift */,
+				8525713029A7D90B00A7D9DD /* PomeloTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		8525713329A7D91600A7D9DD /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8525713629A7D95800A7D9DD /* EndUserTokenResolver.swift */,
+				8525713729A7D95800A7D9DD /* PomeloAccessTokenDTO.swift */,
+				8525713429A7D95800A7D9DD /* Service */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8525713429A7D95800A7D9DD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8525713529A7D95800A7D9DD /* EndUserTokenAuthorizationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8525713B29A7D9F800A7D9DD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8525713C29A7DA2800A7D9DD /* WidgetType.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		8525713E29A7DD1300A7D9DD /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8525713F29A7DD2800A7D9DD /* WidgetSwiftUIFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		85716C6229A7C2C9007BD9C5 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +129,12 @@
 		85716C6D29A7C2C9007BD9C5 /* PomeloCardsSwiftUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8525713E29A7DD1300A7D9DD /* Factory */,
+				8525713B29A7D9F800A7D9DD /* Domain */,
+				8525713329A7D91600A7D9DD /* Auth */,
+				8525712129A7D89800A7D9DD /* UI */,
+				8525711E29A7D87200A7D9DD /* Core */,
 				85716C6E29A7C2C9007BD9C5 /* PomeloCardsSwiftUIDemoApp.swift */,
-				85716C7029A7C2C9007BD9C5 /* ContentView.swift */,
 				85716C7229A7C2CA007BD9C5 /* Assets.xcassets */,
 				85716C7429A7C2CA007BD9C5 /* Preview Content */,
 			);
@@ -83,6 +165,9 @@
 			dependencies = (
 			);
 			name = PomeloCardsSwiftUIDemo;
+			packageProductDependencies = (
+				8525711C29A7D81100A7D9DD /* PomeloCards */,
+			);
 			productName = PomeloCardsSwiftUIDemo;
 			productReference = 85716C6B29A7C2C9007BD9C5 /* PomeloCardsSwiftUIDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 85716C6229A7C2C9007BD9C5;
+			packageReferences = (
+				8525711B29A7D81100A7D9DD /* XCRemoteSwiftPackageReference "cards-ios" */,
+			);
 			productRefGroup = 85716C6C29A7C2C9007BD9C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +225,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85716C7129A7C2C9007BD9C5 /* ContentView.swift in Sources */,
+				8525713829A7D95800A7D9DD /* EndUserTokenAuthorizationService.swift in Sources */,
+				8525712029A7D87C00A7D9DD /* AppDelegate.swift in Sources */,
+				85716C7129A7C2C9007BD9C5 /* HomeView.swift in Sources */,
+				8525713A29A7D95800A7D9DD /* PomeloAccessTokenDTO.swift in Sources */,
+				8525714029A7DD2800A7D9DD /* WidgetSwiftUIFactory.swift in Sources */,
+				8525713129A7D90B00A7D9DD /* BlueClientTheme.swift in Sources */,
+				8525713929A7D95800A7D9DD /* EndUserTokenResolver.swift in Sources */,
+				8525713229A7D90B00A7D9DD /* PomeloTheme.swift in Sources */,
 				85716C6F29A7C2C9007BD9C5 /* PomeloCardsSwiftUIDemoApp.swift in Sources */,
+				8525713D29A7DA2800A7D9DD /* WidgetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +435,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8525711B29A7D81100A7D9DD /* XCRemoteSwiftPackageReference "cards-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:pomelo-la/cards-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8525711C29A7D81100A7D9DD /* PomeloCards */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8525711B29A7D81100A7D9DD /* XCRemoteSwiftPackageReference "cards-ios" */;
+			productName = PomeloCards;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 85716C6329A7C2C9007BD9C5 /* Project object */;
 }
