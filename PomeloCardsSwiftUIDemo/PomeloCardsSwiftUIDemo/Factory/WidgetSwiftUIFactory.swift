@@ -54,9 +54,19 @@ struct WidgetView: View {
                     print("Change pin error: \(error)")
                 }
             })
-            #warning("Should implement other widgets")
-            default: EmptyView()
-            }
+            case .card: CardView(params: params,
+                                 cardholder: "Juan Perez",
+                                 lastFourDigits: "3636",
+                                 imageFetcher: PomeloImageFetcher(image: UIImage(named: "TarjetaVirtual")!),
+                                 onPanCopy: { print("Pan was copied") },
+                                 completionHandler: { result in
+                switch result {
+                case .success(): break
+                case .failure(let error):
+                    print("Change pin error: \(error)")
+                }
+            })
+        }
         }.onAppear(perform: {
             loadSensitiveData = true
         })
@@ -83,6 +93,25 @@ extension PomeloCardDetailWidget {
         self.onPanCopy = onPanCopy
         self.completionHandler = completionHandler
         self._loadSensitiveData = loadSensitiveData
+    }
+}
+
+extension CardView {
+    init?(params: [String : Any],
+          cardholder: String,
+          lastFourDigits: String,
+          imageFetcher: PomeloUIImageFetchable,
+          onPanCopy: (() -> Void)? = nil,
+          completionHandler: @escaping (Result<Void, PomeloError>) -> Void,
+          loadSensitiveData: Bool = false) {
+        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
+        self.cardId = cardId
+        self.cardholder = cardholder
+        self.lastFourDigits = lastFourDigits
+        self.imageFetcher = imageFetcher
+        self.onPanCopy = onPanCopy
+        self.completionHandler = completionHandler
+        self.loadSensitiveData = loadSensitiveData
     }
 }
 
@@ -131,4 +160,29 @@ struct PomeloCardDetailWidget: UIViewControllerRepresentable {
             }
         }
     }
+}
+
+struct PomeloCardView: UIViewRepresentable {
+    typealias UIViewType = PomeloCardWidgetView
+    let cardholder: String
+    let lastFourDigits: String
+    let imageFetcher: PomeloUIImageFetchable
+    let cardId: String
+    let onPanCopy: (() -> Void)?
+    let completionHandler: (Result<Void, PomeloError>) -> Void
+    @Binding var loadSensitiveData: Bool
+    
+    func makeUIView(context: Context) -> PomeloCardWidgetView {
+        PomeloCardWidgetView(cardholderName: cardholder, lastFourCardDigits: lastFourDigits, imageFetcher: imageFetcher)
+    }
+    
+    func updateUIView(_ uiView: PomeloCardWidgetView, context: Context) {
+        if loadSensitiveData {
+            uiView.showSensitiveData(cardId: cardId, onPanCopy: onPanCopy) { result in
+                completionHandler(result)
+                loadSensitiveData = false
+            }
+        }
+    }
+    
 }
