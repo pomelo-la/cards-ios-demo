@@ -29,13 +29,13 @@ struct WidgetView: View {
             switch widget {
             case .cardActivation:
                 PomeloCardActivationWidget(params: params, completionHandler: { result in
-                switch result {
-                case .success(let cardId):
-                    print("Card was activated. Card id: \(String(describing: cardId))")
-                case .failure(let error):
-                    print("Activate card error: \(error)")
-                }
-            })
+                    switch result {
+                    case .success(let cardId):
+                        print("Card was activated. Card id: \(String(describing: cardId))")
+                    case .failure(let error):
+                        print("Activate card error: \(error)")
+                    }
+                })
             case .changePin:
                 PomeloCardPinWidget(params: params, completionHandler: { result in
                     switch result {
@@ -54,19 +54,20 @@ struct WidgetView: View {
                     print("Change pin error: \(error)")
                 }
             })
-            case .card: CardView(params: params,
-                                 cardholder: "Juan Perez",
-                                 lastFourDigits: "3636",
-                                 imageFetcher: PomeloImageFetcher(image: UIImage(named: "TarjetaVirtual")!),
-                                 onPanCopy: { print("Pan was copied") },
-                                 completionHandler: { result in
-                switch result {
-                case .success(): break
-                case .failure(let error):
-                    print("Change pin error: \(error)")
-                }
-            })
-        }
+            case .card: CardContainerView(loadSensitiveData: $loadSensitiveData,
+                                          params: params,
+                                          cardholder: "Juan Perez",
+                                          lastFourDigits: "3636",
+                                          imageFetcher: PomeloImageFetcher(image: UIImage(named: "TarjetaVirtual")!),
+                                          onPanCopy: { print("Pan was copied") },
+                                          completionHandler: { result in
+                                              switch result {
+                                              case .success(): break
+                                              case .failure(let error):
+                                                  print("Sensitive data error: \(error)")
+                                              }
+                                          })
+            }
         }.onAppear(perform: {
             loadSensitiveData = true
         })
@@ -96,22 +97,24 @@ extension PomeloCardDetailWidget {
     }
 }
 
-extension CardView {
-    init?(params: [String : Any],
+extension CardContainerView {
+    init?(loadSensitiveData: Binding<Bool>,
+          params: [String : Any],
           cardholder: String,
           lastFourDigits: String,
           imageFetcher: PomeloUIImageFetchable,
           onPanCopy: (() -> Void)? = nil,
-          completionHandler: @escaping (Result<Void, PomeloError>) -> Void,
-          loadSensitiveData: Bool = false) {
+          completionHandler: @escaping (Result<Void, PomeloError>) -> Void) {
         guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
-        self.cardId = cardId
-        self.cardholder = cardholder
-        self.lastFourDigits = lastFourDigits
-        self.imageFetcher = imageFetcher
-        self.onPanCopy = onPanCopy
-        self.completionHandler = completionHandler
-        self.loadSensitiveData = loadSensitiveData
+        self.cardViewBuilder = { loadData in
+            PomeloCardView(cardholder: cardholder,
+                           lastFourDigits: lastFourDigits,
+                           imageFetcher: imageFetcher,
+                           cardId: cardId,
+                           onPanCopy: onPanCopy,
+                           completionHandler: completionHandler,
+                           loadSensitiveData: loadData)
+        }
     }
 }
 
@@ -184,5 +187,4 @@ struct PomeloCardView: UIViewRepresentable {
             }
         }
     }
-    
 }
