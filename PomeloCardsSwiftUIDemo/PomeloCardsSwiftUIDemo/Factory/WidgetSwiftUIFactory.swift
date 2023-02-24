@@ -22,11 +22,13 @@ class WidgetSwiftUIFactory: WidgetSwiftUIFactoryProtocol {
 struct WidgetView: View {
     let widget: WidgetType
     let params: [String: Any]
+    @State var loadSensitiveData: Bool = false
     
     var body: some View {
         Group {
             switch widget {
-            case .cardActivation: PomeloCardsActivationWidget(params: params, completionHandler: { result in
+            case .cardActivation:
+                PomeloCardActivationWidget(params: params, completionHandler: { result in
                 switch result {
                 case .success(let cardId):
                     print("Card was activated. Card id: \(String(describing: cardId))")
@@ -34,7 +36,18 @@ struct WidgetView: View {
                     print("Activate card error: \(error)")
                 }
             })
-            case .changePin: PomeloCardsPinWidget(params: params, completionHandler: { result in
+            case .changePin:
+                PomeloCardPinWidget(params: params, completionHandler: { result in
+                    switch result {
+                    case .success(): break
+                    case .failure(let error):
+                        print("Change pin error: \(error)")
+                    }
+                })
+            case .cardDetail: PomeloCardDetailWidget(loadSensitiveData: $loadSensitiveData,
+                                                     params: params,
+                                                     onPanCopy: { print("Pan was copied") },
+                                                     completionHandler: { result in
                 switch result {
                 case .success(): break
                 case .failure(let error):
@@ -44,45 +57,78 @@ struct WidgetView: View {
             #warning("Should implement other widgets")
             default: EmptyView()
             }
-        }
+        }.onAppear(perform: {
+            loadSensitiveData = true
+        })
+    }
+}
+
+// MARK: - Helpers for factory methods
+
+extension PomeloCardPinWidget {
+    init?(params: [String : Any], completionHandler: @escaping (Result<Void, PomeloError>) -> Void) {
+        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
+        self.cardId = cardId
+        self.completionHandler = completionHandler
+    }
+}
+
+extension PomeloCardDetailWidget {
+    init?(loadSensitiveData: Binding<Bool>,
+          params: [String : Any],
+          onPanCopy: (() -> Void)? = nil,
+          completionHandler: @escaping (Result<Void, PomeloError>) -> Void) {
+        guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
+        self.cardId = cardId
+        self.onPanCopy = onPanCopy
+        self.completionHandler = completionHandler
+        self._loadSensitiveData = loadSensitiveData
     }
 }
 
 // MARK: - Views that will be publicly available on Cards SDK
 
-struct PomeloCardsActivationWidget: UIViewControllerRepresentable {
+struct PomeloCardActivationWidget: UIViewControllerRepresentable {
     typealias UIViewControllerType = PomeloWidgetCardActivationViewController
     let params: [String: Any]
     let completionHandler: (Result<String?, PomeloError>) -> Void
     
     func makeUIViewController(context: Context) -> PomeloWidgetCardActivationViewController {
-        let widgetCardActivationViewController =  PomeloWidgetCardActivationViewController(completionHandler: completionHandler)
-        return widgetCardActivationViewController
+        PomeloWidgetCardActivationViewController(completionHandler: completionHandler)
     }
     
-    func updateUIViewController(_ uiViewController: PomeloWidgetCardActivationViewController, context: Context) {
-        // Updates the state of the specified view controller with new information from SwiftUI.
-    }
+    func updateUIViewController(_ uiViewController: PomeloWidgetCardActivationViewController, context: Context) {}
 }
 
-struct PomeloCardsPinWidget: UIViewControllerRepresentable {
+struct PomeloCardPinWidget: UIViewControllerRepresentable {
     typealias UIViewControllerType = PomeloWidgetChangePinViewController
-    let params: [String: Any]
+    let cardId: String
     let completionHandler: (Result<Void, PomeloError>) -> Void
     
-    init?(params: [String : Any], completionHandler: @escaping (Result<Void, PomeloError>) -> Void) {
-        guard params[WidgetParams.cardId] is String else { return nil }
-        self.params = params
-        self.completionHandler = completionHandler
-    }
-    
     func makeUIViewController(context: Context) -> PomeloWidgetChangePinViewController {
-        let cardId = params[WidgetParams.cardId] as! String
-        let widgetChangePinViewController = PomeloWidgetChangePinViewController(cardId: cardId, completionHandler: completionHandler)
-        return widgetChangePinViewController
+        PomeloWidgetChangePinViewController(cardId: cardId, completionHandler: completionHandler)
     }
     
-    func updateUIViewController(_ uiViewController: PomeloWidgetChangePinViewController, context: Context) {
-        // Updates the state of the specified view controller with new information from SwiftUI.
+    func updateUIViewController(_ uiViewController: PomeloWidgetChangePinViewController, context: Context) {}
+}
+
+struct PomeloCardDetailWidget: UIViewControllerRepresentable {
+    typealias UIViewControllerType = PomeloCardWidgetDetailViewController
+    let cardId: String
+    let onPanCopy: (() -> Void)?
+    let completionHandler: (Result<Void, PomeloError>) -> Void
+    @Binding var loadSensitiveData: Bool
+    
+    func makeUIViewController(context: Context) -> PomeloCardWidgetDetailViewController {
+        PomeloCardWidgetDetailViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: PomeloCardWidgetDetailViewController, context: Context) {
+        if loadSensitiveData {
+            uiViewController.showSensitiveData(cardId: cardId, onPanCopy: onPanCopy) { result in
+                completionHandler(result)
+                loadSensitiveData = false
+            }
+        }
     }
 }
