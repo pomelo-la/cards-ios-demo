@@ -28,7 +28,7 @@ struct WidgetView: View {
         Group {
             switch widget {
             case .cardActivation:
-                PomeloCardActivationWidget(params: params, completionHandler: { result in
+                PomeloCardActivationWidget(completionHandler: { result in
                     switch result {
                     case .success(let cardId):
                         print("Card was activated. Card id: \(String(describing: cardId))")
@@ -122,7 +122,6 @@ extension CardContainerView {
 
 struct PomeloCardActivationWidget: UIViewControllerRepresentable {
     typealias UIViewControllerType = PomeloWidgetCardActivationViewController
-    let params: [String: Any]
     let completionHandler: (Result<String?, PomeloError>) -> Void
     
     func makeUIViewController(context: Context) -> PomeloWidgetCardActivationViewController {
