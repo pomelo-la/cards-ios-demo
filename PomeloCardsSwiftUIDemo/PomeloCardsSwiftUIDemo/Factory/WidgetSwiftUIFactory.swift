@@ -28,7 +28,7 @@ struct WidgetView: View {
         Group {
             switch widget {
             case .cardActivation:
-                PomeloCardActivationWidget(completionHandler: { result in
+                PomeloWidgetCardActivationSwiftUIView(completionHandler: { result in
                     switch result {
                     case .success(let cardId):
                         print("Card was activated. Card id: \(String(describing: cardId))")
@@ -37,7 +37,7 @@ struct WidgetView: View {
                     }
                 })
             case .changePin:
-                PomeloCardPinWidget(params: params, completionHandler: { result in
+                PomeloWidgetChangePinSwiftUIView(params: params, completionHandler: { result in
                     switch result {
                     case .success(): break
                     case .failure(let error):
@@ -76,11 +76,10 @@ struct WidgetView: View {
 
 // MARK: - Helpers for factory methods
 
-extension PomeloCardPinWidget {
+extension PomeloWidgetChangePinSwiftUIView {
     init?(params: [String : Any], completionHandler: @escaping (Result<Void, PomeloError>) -> Void) {
         guard let cardId = params[WidgetParams.cardId] as? String else { return nil }
-        self.cardId = cardId
-        self.completionHandler = completionHandler
+        self.init(cardId: cardId, completionHandler: completionHandler)
     }
 }
 
@@ -119,29 +118,29 @@ extension CardContainerView {
 }
 
 // MARK: - Views that will be publicly available on Cards SDK
-
-struct PomeloCardActivationWidget: UIViewControllerRepresentable {
-    typealias UIViewControllerType = PomeloWidgetCardActivationViewController
-    let completionHandler: (Result<String?, PomeloError>) -> Void
-    
-    func makeUIViewController(context: Context) -> PomeloWidgetCardActivationViewController {
-        PomeloWidgetCardActivationViewController(completionHandler: completionHandler)
-    }
-    
-    func updateUIViewController(_ uiViewController: PomeloWidgetCardActivationViewController, context: Context) {}
-}
-
-struct PomeloCardPinWidget: UIViewControllerRepresentable {
-    typealias UIViewControllerType = PomeloWidgetChangePinViewController
-    let cardId: String
-    let completionHandler: (Result<Void, PomeloError>) -> Void
-    
-    func makeUIViewController(context: Context) -> PomeloWidgetChangePinViewController {
-        PomeloWidgetChangePinViewController(cardId: cardId, completionHandler: completionHandler)
-    }
-    
-    func updateUIViewController(_ uiViewController: PomeloWidgetChangePinViewController, context: Context) {}
-}
+//
+//public struct PomeloCardActivationWidget: UIViewControllerRepresentable {
+//    typealias UIViewControllerType = PomeloWidgetCardActivationViewController
+//    let completionHandler: (Result<String?, PomeloError>) -> Void
+//
+//    func makeUIViewController(context: Context) -> PomeloWidgetCardActivationViewController {
+//        PomeloWidgetCardActivationViewController(completionHandler: completionHandler)
+//    }
+//
+//    func updateUIViewController(_ uiViewController: PomeloWidgetCardActivationViewController, context: Context) {}
+//}
+//
+//public struct PomeloCardPinWidget: UIViewControllerRepresentable {
+//    typealias UIViewControllerType = PomeloWidgetChangePinViewController
+//    let cardId: String
+//    let completionHandler: (Result<Void, PomeloError>) -> Void
+//
+//    func makeUIViewController(context: Context) -> PomeloWidgetChangePinViewController {
+//        PomeloWidgetChangePinViewController(cardId: cardId, completionHandler: completionHandler)
+//    }
+//
+//    func updateUIViewController(_ uiViewController: PomeloWidgetChangePinViewController, context: Context) {}
+//}
 
 struct PomeloCardDetailWidget: UIViewControllerRepresentable {
     typealias UIViewControllerType = PomeloCardWidgetDetailViewController
