@@ -9,7 +9,7 @@ import { Button, SafeAreaView, NativeModules } from 'react-native';
 
 const App = () => {
   function launchCards() {
-    NativeModules.PomeloCardsAdapter.launchCards()
+    NativeModules.PomeloCardsAdapter.launchCards("juan.perez@pomelo.la")
     .then(res => {})
     .catch(e => {
       alert("Launch Card Failed")

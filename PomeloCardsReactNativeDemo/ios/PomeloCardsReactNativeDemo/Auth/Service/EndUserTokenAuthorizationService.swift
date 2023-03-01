@@ -15,7 +15,7 @@ class EndUserTokenAuthorizationService: PomeloAuthorizationServiceProtocol {
     private let email: String
     private let endUserTokenResolver: UserEmailEndUserTokenResolverProtocol
     
-    init(email: String = String.email,
+    init(email: String,
          endUserTokenResolver: UserEmailEndUserTokenResolverProtocol = UserEmailEndUserTokenResolver()) {
         self.email = email
         self.endUserTokenResolver = endUserTokenResolver
@@ -33,9 +33,4 @@ class EndUserTokenAuthorizationService: PomeloAuthorizationServiceProtocol {
             completionHandler(endUserToken)
         }
     }
-}
-
-fileprivate extension String {
-    /// Hardcoded test user email
-    static let email = "juan.perez@pomelo.la"
 }

@@ -10,7 +10,8 @@
 
 @interface RCT_EXTERN_MODULE(PomeloCardsAdapter, NSObject)
 
-RCT_EXTERN_METHOD(launchCards: (RCTPromiseResolveBlock)resolve
+RCT_EXTERN_METHOD(launchCards:(NSString)email
+                  resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 
 @end
