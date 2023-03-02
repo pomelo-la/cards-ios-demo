@@ -5,7 +5,8 @@
  * @format
  */
 import React from 'react';
-import { SafeAreaView, NativeModules, StyleSheet, StatusBar, View, SectionList, TouchableOpacity, Text } from 'react-native';
+import { SafeAreaView, StyleSheet, StatusBar, View, SectionList, TouchableOpacity, Text } from 'react-native';
+import NativePomeloCardsModule from './native_modules/PomeloCardsModule';
 
 const DATA = [
   {
@@ -40,7 +41,7 @@ const DATA = [
 
 const App = () => {
   function launchCards() {
-    NativeModules.PomeloCardsAdapter.launchCards("juan.perez@pomelo.la")
+    NativePomeloCardsModule.launchCards("juan.perez@pomelo.la")
     .then(res => {})
     .catch(e => {
       alert("Launch Card Failed")

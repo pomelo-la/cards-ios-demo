@@ -1,5 +1,5 @@
 //
-//  PomeloCardsAdapter.swift
+//  PomeloCardsModule.swift
 //  PomeloCardsReactNativeDemo
 //
 //  Created by Fernando Pena on 01/03/2023.
@@ -11,8 +11,8 @@ import PomeloUI
 import PomeloNetworking
 import PomeloCards
 
-@objc(PomeloCardsAdapter)
-class PomeloCardsAdapter: NSObject {
+@objc(PomeloCardsModule)
+class PomeloCardsModule: NSObject {
   @objc func launchCards(_ email: String,
                          resolver resolve: @escaping RCTPromiseResolveBlock,
                          rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
