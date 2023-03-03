@@ -21,6 +21,8 @@
 		8596591D29AF956200B7B748 /* EndUserTokenAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596591829AF956200B7B748 /* EndUserTokenAuthorizationService.swift */; };
 		8596591E29AF956200B7B748 /* PomeloTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596591A29AF956200B7B748 /* PomeloTheme.swift */; };
 		8596592229AF96E200B7B748 /* PomeloCardsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8596592129AF96E200B7B748 /* PomeloCardsModule.m */; };
+		85A9DB2D29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A9DB2C29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift */; };
+		85A9DB2F29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A9DB2E29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		8596591829AF956200B7B748 /* EndUserTokenAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndUserTokenAuthorizationService.swift; sourceTree = "<group>"; };
 		8596591A29AF956200B7B748 /* PomeloTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomeloTheme.swift; sourceTree = "<group>"; };
 		8596592129AF96E200B7B748 /* PomeloCardsModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PomeloCardsModule.m; sourceTree = "<group>"; };
+		85A9DB2C29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeloCardWidgetViewManager.swift; sourceTree = "<group>"; };
+		85A9DB2E29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PomeloCardWidgetViewManager.m; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-PomeloCardsReactNativeDemo-PomeloCardsReactNativeDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomeloCardsReactNativeDemo-PomeloCardsReactNativeDemoTests.release.xcconfig"; path = "Target Support Files/Pods-PomeloCardsReactNativeDemo-PomeloCardsReactNativeDemoTests/Pods-PomeloCardsReactNativeDemo-PomeloCardsReactNativeDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -104,6 +108,8 @@
 				8596591F29AF956C00B7B748 /* Core */,
 				8596590329AF8BB400B7B748 /* PomeloCardsModule.swift */,
 				8596592129AF96E200B7B748 /* PomeloCardsModule.m */,
+				85A9DB2C29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift */,
+				85A9DB2E29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m */,
 				8596590229AF8BB300B7B748 /* PomeloCardsReactNativeDemo-Bridging-Header.h */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				8596591429AF956200B7B748 /* Auth */,
@@ -280,7 +286,7 @@
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
-				859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios" */,
+				859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios.git" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -474,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A9DB2F29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m in Sources */,
 				8596591D29AF956200B7B748 /* EndUserTokenAuthorizationService.swift in Sources */,
 				8596592229AF96E200B7B748 /* PomeloCardsModule.m in Sources */,
 				8596591C29AF956200B7B748 /* PomeloAccessTokenDTO.swift in Sources */,
@@ -481,6 +488,7 @@
 				8596591E29AF956200B7B748 /* PomeloTheme.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				8596591B29AF956200B7B748 /* EndUserTokenResolver.swift in Sources */,
+				85A9DB2D29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift in Sources */,
 				8596590429AF8BB400B7B748 /* PomeloCardsModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -777,7 +785,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios" */ = {
+		859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:pomelo-la/cards-ios.git";
 			requirement = {
@@ -790,7 +798,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		8596590029AF871000B7B748 /* PomeloCards */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios" */;
+			package = 859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios.git" */;
 			productName = PomeloCards;
 		};
 /* End XCSwiftPackageProductDependency section */
