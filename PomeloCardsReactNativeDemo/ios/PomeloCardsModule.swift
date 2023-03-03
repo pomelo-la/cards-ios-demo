@@ -13,8 +13,7 @@ import PomeloCards
 
 @objc(PomeloCardsModule)
 class PomeloCardsModule: NSObject {
-  @objc func launchCards(_ email: String,
-                         resolver resolve: @escaping RCTPromiseResolveBlock,
+  @objc func launchCards(_ resolve: @escaping RCTPromiseResolveBlock,
                          rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
     guaranteeMainThread {
       guard let viewController = UIApplication.shared.windows.first?.rootViewController else {
@@ -22,19 +21,20 @@ class PomeloCardsModule: NSObject {
         reject("\(error.code)", "Cannot find navigation controller", error)
         return
       }
-      self.setupPomeloCards(email: email)
       PomeloCards.launchCards(on: viewController)
       resolve(true)
     }
   }
   
-  private func setupPomeloCards(email: String) {
+  @objc func setupSDK(_ email: String) {
     //Configure Cards SDK
     PomeloCards.initialize(with: PomeloCardsConfiguration(environment: .staging))
     //Configure authorization service on PomeloNetworking
     PomeloNetworkConfigurator.shared.configure(authorizationService: EndUserTokenAuthorizationService(email: email))
-    //Configure theme on PomeloUI
-    PomeloUIGateway.shared.configure(theme: PomeloTheme())
+    guaranteeMainThread {
+      //Configure theme on PomeloUI
+      PomeloUIGateway.shared.configure(theme: PomeloTheme())
+    }
   }
 }
 

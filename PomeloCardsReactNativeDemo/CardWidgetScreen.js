@@ -1,34 +1,26 @@
 import React, { useRef } from 'react'
-import { Button, SafeAreaView } from 'react-native';
+import ReactNative, { Button, SafeAreaView, UIManager } from 'react-native';
 import PomeloCardView from './native_modules/PomeloCardWidgetViewManager';
-
-
-
-const createNativePomeloCardView = async (params) => {
-    try {
-      const cardView = await NativePomeloCardWidgetViewManager.createCustomView(params);
-      return cardView;
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
 const CardWidgetScreen = ({ navigation }) => {
     const cardViewRef = useRef(null)
 
-    function getSensitiveData() {
-        // console.log(cardViewRef.current)
-        cardViewRef.current.getSensitiveData("Juan Perez", "1212")
+    function showSensitiveData() {
+      UIManager.dispatchViewManagerCommand(
+        ReactNative.findNodeHandle(cardViewRef.current),
+        UIManager.getViewManagerConfig('PomeloCardWidgetView').Commands.showSensitiveData,
+        ["crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG"],
+      );
     }
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <PomeloCardView 
               ref={cardViewRef}
-              setupParams={{cardholderName:"Juan Perez", lastFourCardDigits:"1212"}}/>
+              setupParams={{cardholderName:"Juan Perez", lastFourCardDigits:"8016"}}/>
             <Button
-                onPress={() => getSensitiveData()}
-                title="Get sensitive data"
+                onPress={() => showSensitiveData()}
+                title="Display sensitive data"
                 />
         </SafeAreaView>
     );

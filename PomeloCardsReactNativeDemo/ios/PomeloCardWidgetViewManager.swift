@@ -19,14 +19,44 @@ class PomeloCardWidgetViewManager: RCTViewManager {
   override static func requiresMainQueueSetup() -> Bool {
     return true
   }
+  
+  @objc func showSensitiveData(_ reactTag: NSNumber,
+                                      cardId: String
+//                                      onPanCopy: @escaping RCTResponseSenderBlock,
+//                                      resolver resolve: @escaping RCTPromiseResolveBlock,
+//                                      rejecter reject: @escaping RCTPromiseRejectBlock
+  ) {
+    self.bridge.uiManager.addUIBlock { uiManager, viewRegistry in
+      guard let view = viewRegistry?[reactTag] as? PomeloCardWidgetView else {
+//        RCTLogError(@"Cannot find NativeView with tag #%@", reactTag)''
+        let error = NSError.cardsError
+//        reject("\(error.code)", "Cannot find NativeView with tag \(reactTag)", error)
+        return
+      }
+      view.showSensitiveData(cardId: cardId) {
+//        onPanCopy(nil)
+      } completionHandler: { result in
+        switch result {
+        case .success: break
+//          resolve(true)
+        case .failure(let error): break
+//          reject("0", "Failed to load sensitive data", error)
+        }
+      }
+    }
+  }
 }
 
 extension PomeloCardWidgetView {
   @objc public func setSetupParams(_ params: NSDictionary) {
       guard let cardholderName = params["cardholderName"] as? String,
             let lastFourCardDigits = params["lastFourCardDigits"] as? String else {
+//        RCTLogError(@"Missing required params: `cardholderName` and `lastFourCardDigits`")
         return
       }
-      self.setup(cardholderName: cardholderName, lastFourCardDigits: lastFourCardDigits, imageFetcher: PomeloImageFetcher(image: UIImage(named: "tarjetaVirtual")!))
+      self.setup(cardholderName: cardholderName,
+                 lastFourCardDigits: lastFourCardDigits,
+                 imageFetcher: PomeloImageFetcher(image: UIImage(named: "tarjetaVirtual")!))
   }
+  
 }

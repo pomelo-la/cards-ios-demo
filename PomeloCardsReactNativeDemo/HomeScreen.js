@@ -36,7 +36,7 @@ const DATA = [
 
 const HomeScreen = ({ navigation }) => {
     function launchCards() {
-        NativePomeloCardsModule.launchCards("juan.perez@pomelo.la")
+        NativePomeloCardsModule.launchCards()
             .then(res => { })
             .catch(e => {
                 alert("Launch Card Failed")
