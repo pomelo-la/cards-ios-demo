@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:pomelo-la/cards-ios.git",
       "state" : {
-        "revision" : "2dace322f411e9bff961b4166183bb7f27a1eb20",
-        "version" : "0.2.4"
+        "revision" : "1b54e6ec32ac816d7225cb5106f4834d98ce3ef1",
+        "version" : "0.2.5"
       }
     },
     {
