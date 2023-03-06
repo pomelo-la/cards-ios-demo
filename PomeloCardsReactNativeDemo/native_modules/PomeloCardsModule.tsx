@@ -13,5 +13,6 @@ interface PomeloCardsInterface {
     launchCards(resolve: Promise<void>, reject: Promise<void>): void;
     launchCardListWidget(cardId: string, resolve: Promise<void>, reject: Promise<void>): void;
     launchChangePinWidget(cardId: string, resolve: Promise<void>, reject: Promise<void>): void;
+    launchActivateCardWidget(resolve: Promise<void>, reject: Promise<void>): void;
 }
 export default PomeloCardsModule as PomeloCardsInterface;

@@ -84,6 +84,28 @@ class PomeloCardsModule: NSObject {
       viewController.present(widgetChangePinViewController, animated: true)
     }
   }
+  
+  @objc func launchActivateCardWidget(_  resolve: @escaping RCTPromiseResolveBlock,
+                                      rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+    guaranteeMainThread {
+      guard let viewController = UIApplication.shared.windows.first?.rootViewController else {
+        let rejectParams = NSError.cardsError.rejectParams(message: "Cannot find navigation controller")
+        reject(rejectParams.0, rejectParams.1, rejectParams.2)
+        return
+      }
+      let widgetCardActivationViewController =  PomeloWidgetCardActivationViewController(completionHandler: { result in
+          switch result {
+          case .success(let cardId):
+            viewController.dismiss(animated: true) {
+              resolve(cardId)
+            }
+          case .failure(let error):
+            reject("0", "Failed to activate card", error)
+          }
+      })
+      viewController.present(widgetCardActivationViewController, animated: true)
+    }
+  }
 }
 
 

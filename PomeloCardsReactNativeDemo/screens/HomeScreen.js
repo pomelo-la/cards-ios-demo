@@ -56,6 +56,13 @@ const HomeScreen = ({ navigation }) => {
         .catch(e => { alert(`Change pin failed with error: ${e.toString()}`) })
     }
 
+    function launchActivateCardWidget() {
+        NativePomeloCardsModule.launchActivateCardWidget().then(res => {
+            // Activate card succeed
+         })
+        .catch(e => { alert(`Change pin failed with error: ${e.toString()}`) })
+    }
+
     function onPressItem(item) {
         if (item.id == 'cards-sdk') {
             launchCards()
@@ -65,6 +72,8 @@ const HomeScreen = ({ navigation }) => {
             launchCardListWidget()
         } else if (item.id == 'widget-change-pin') {
             launcChangePinWidget()
+        } else if (item.id == 'widget-activate-card') {
+            launchActivateCardWidget()
         } else {
             alert(`Flow not supported for item: ${item.title}`)
         }
