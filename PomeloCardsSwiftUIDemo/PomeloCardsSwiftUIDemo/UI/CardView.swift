@@ -10,12 +10,12 @@ import PomeloCards
 
 struct CardContainerView: View {
     @State var loadSensitiveData: Bool = false
-    var cardViewBuilder: (Binding<Bool>) -> PomeloCardView
-
-    init(@ViewBuilder builder: @escaping (Binding<Bool>) -> PomeloCardView) {
+    var cardViewBuilder: (Binding<Bool>) -> PomeloCardSwiftUIView
+    
+    init(@ViewBuilder builder: @escaping (Binding<Bool>) -> PomeloCardSwiftUIView) {
         self.cardViewBuilder = builder
     }
-
+    
     var body: some View {
         VStack {
             cardViewBuilder($loadSensitiveData)
@@ -31,13 +31,13 @@ struct CardContainerView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardContainerView { loadData in
-            PomeloCardView(cardholder: "Juan Perez",
-                           lastFourDigits: "3636",
-                           imageFetcher: PomeloImageFetcher(image: UIImage(named: "TarjetaVirtual")!),
-                           cardId: "",
-                           onPanCopy: {},
-                           completionHandler: { _ in },
-                           loadSensitiveData: loadData)
+            PomeloCardSwiftUIView(cardholder: "Juan Perez",
+                                  lastFourDigits: "3636",
+                                  imageFetcher: PomeloImageFetcher(image: UIImage(named: "TarjetaVirtual")!),
+                                  cardId: "",
+                                  onPanCopy: {},
+                                  completionHandler: { _ in },
+                                  loadSensitiveData: loadData)
         }
     }
 }
