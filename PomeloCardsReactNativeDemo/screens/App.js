@@ -9,7 +9,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen';
 import CardWidgetScreen from './CardWidgetScreen';
-import NativePomeloCardsModule from './native_modules/PomeloCardsModule';
+import NativePomeloCardsModule from '../native_modules/PomeloCardsModule';
 
 const Stack = createNativeStackNavigator();
 

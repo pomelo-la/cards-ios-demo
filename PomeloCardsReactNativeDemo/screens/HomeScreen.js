@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { SafeAreaView, StyleSheet, StatusBar, View, SectionList, TouchableOpacity, Text } from 'react-native';
-import NativePomeloCardsModule from './native_modules/PomeloCardsModule';
+import NativePomeloCardsModule from '../native_modules/PomeloCardsModule';
 
 const DATA = [
     {
