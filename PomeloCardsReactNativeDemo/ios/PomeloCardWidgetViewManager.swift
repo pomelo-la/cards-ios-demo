@@ -27,13 +27,12 @@ class PomeloCardWidgetViewManager: RCTViewManager {
   ) {
     self.bridge.uiManager.addUIBlock { uiManager, viewRegistry in
       guard let view = viewRegistry?[reactTag] as? PomeloCardWidgetView else {
-//        RCTLogError(@"Cannot find NativeView with tag #%@", reactTag)
         let error = NSError.cardsError
         reject("\(error.code)", "Cannot find NativeView with tag \(reactTag)", error)
         return
       }
       view.showSensitiveData(cardId: cardId) {
-//        onPanCopy(nil)
+        // TODO: Cannot have 3 callbacks on the same method currently -> https://github.com/facebook/react-native/issues/29860"
       } completionHandler: { result in
         switch result {
         case .success:
@@ -50,7 +49,8 @@ extension PomeloCardWidgetView {
   @objc public func setSetupParams(_ params: NSDictionary) {
       guard let cardholderName = params["cardholderName"] as? String,
             let lastFourCardDigits = params["lastFourCardDigits"] as? String else {
-//        RCTLogError(@"Missing required params: `cardholderName` and `lastFourCardDigits`")
+        // TODO: Bridge `RCTLog` to swift world
+        // RCTLogError(@"Missing required params: `cardholderName` and `lastFourCardDigits`")
         return
       }
       self.setup(cardholderName: cardholderName,

@@ -17,8 +17,8 @@ class PomeloCardsModule: NSObject {
                          rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
     guaranteeMainThread {
       guard let viewController = UIApplication.shared.windows.first?.rootViewController else {
-        let error = NSError.cardsError
-        reject("\(error.code)", "Cannot find navigation controller", error)
+        let rejectParams = NSError.cardsError.rejectParams(message: "Cannot find navigation controller")
+        reject(rejectParams.0, rejectParams.1, rejectParams.2)
         return
       }
       PomeloCards.launchCards(on: viewController)
@@ -38,10 +38,13 @@ class PomeloCardsModule: NSObject {
   }
 }
 
-
 extension NSError {
   static var cardsError: NSError {
     NSError(domain: "E_CARDS", code: 0)
+  }
+  
+  func rejectParams(message: String) -> (String, String, NSError) {
+    ("\(self.code)", message, self)
   }
 }
 

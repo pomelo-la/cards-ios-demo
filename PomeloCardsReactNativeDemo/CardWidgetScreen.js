@@ -10,11 +10,13 @@ const CardWidgetScreen = ({ navigation }) => {
 
     function showSensitiveData() {
       const tag = ReactNative.findNodeHandle(cardViewRef.current)
+      
       PomeloCardWidgetViewManager.showSensitiveData(tag, "crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG").then(res => { })
       .catch(e => {
           alert("Launch Card Failed")
       })
     }
+    
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <PomeloCardView 
