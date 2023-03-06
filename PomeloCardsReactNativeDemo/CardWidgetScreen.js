@@ -1,18 +1,20 @@
 import React, { useRef } from 'react'
-import ReactNative, { Button, SafeAreaView, UIManager } from 'react-native';
+import ReactNative, { Button, SafeAreaView } from 'react-native';
 import PomeloCardView from './native_modules/PomeloCardWidgetViewManager';
+import {NativeModules} from 'react-native';
+const {PomeloCardWidgetViewManager} = NativeModules;
+
 
 const CardWidgetScreen = ({ navigation }) => {
     const cardViewRef = useRef(null)
 
     function showSensitiveData() {
-      UIManager.dispatchViewManagerCommand(
-        ReactNative.findNodeHandle(cardViewRef.current),
-        UIManager.getViewManagerConfig('PomeloCardWidgetView').Commands.showSensitiveData,
-        ["crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG"],
-      );
+      const tag = ReactNative.findNodeHandle(cardViewRef.current)
+      PomeloCardWidgetViewManager.showSensitiveData(tag, "crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG").then(res => { })
+      .catch(e => {
+          alert("Launch Card Failed")
+      })
     }
-
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <PomeloCardView 
