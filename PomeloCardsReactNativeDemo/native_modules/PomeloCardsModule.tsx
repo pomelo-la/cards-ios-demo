@@ -9,7 +9,8 @@
 import {NativeModules} from 'react-native';
 const {PomeloCardsModule} = NativeModules;
 interface PomeloCardsInterface {
-    launchCards(resolve: Promise<void>, reject: Promise<void>): void;
     setupSDK(email: string): void;
+    launchCards(resolve: Promise<void>, reject: Promise<void>): void;
+    launchCardListWidget(cardId: string, resolve: Promise<void>, reject: Promise<void>): void;
 }
 export default PomeloCardsModule as PomeloCardsInterface;

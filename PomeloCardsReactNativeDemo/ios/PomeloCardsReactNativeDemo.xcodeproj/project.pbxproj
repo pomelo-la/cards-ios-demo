@@ -286,7 +286,7 @@
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
-				859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios.git" */,
+				859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -785,7 +785,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios.git" */ = {
+		859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:pomelo-la/cards-ios.git";
 			requirement = {
@@ -798,7 +798,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		8596590029AF871000B7B748 /* PomeloCards */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios.git" */;
+			package = 859658FF29AF871000B7B748 /* XCRemoteSwiftPackageReference "cards-ios" */;
 			productName = PomeloCards;
 		};
 /* End XCSwiftPackageProductDependency section */

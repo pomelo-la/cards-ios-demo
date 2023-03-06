@@ -37,18 +37,27 @@ const DATA = [
 const HomeScreen = ({ navigation }) => {
     function launchCards() {
         NativePomeloCardsModule.launchCards()
-            .then(res => { })
             .catch(e => {
-                alert("Launch Card Failed")
+                alert(`Launch card failed with error: ${e.toString()}`)
             })
+    }
+
+    function launchCardListWidget() {
+        NativePomeloCardsModule.launchCardListWidget("crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG").then(res => {
+            // Sensitive data load successfully
+         })
+        .catch(e => { alert(`Show sensitive data failed with error: ${e.toString()}`) })
     }
 
     function onPressItem(item) {
         if (item.id == 'cards-sdk') {
             launchCards()
-        } else {
+        } else if (item.id == 'widget-card') {
             navigation.navigate('CardWidget')
-            console.log(item)
+        } else if (item.id == 'widget-card-list') {
+            launchCardListWidget()
+        } else {
+            alert(`Flow not supported for item: ${item.title}`)
         }
     }
 
