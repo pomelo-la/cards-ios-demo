@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SafeAreaView, StyleSheet, StatusBar, View, SectionList, TouchableOpacity, Text } from 'react-native';
+import { SafeAreaView, StyleSheet, View, SectionList, TouchableOpacity, Text } from 'react-native';
 import NativePomeloCardsModule from '../native_modules/PomeloCardsModule';
 
 const DATA = [
@@ -77,8 +77,7 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        marginTop: StatusBar.currentHeight || 0,
+        flex: 1
     },
     item: {
         padding: 10,
