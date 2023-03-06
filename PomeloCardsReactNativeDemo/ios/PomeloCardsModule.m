@@ -19,5 +19,9 @@ RCT_EXTERN_METHOD(launchCardListWidget:(nonnull NSString*)cardId
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 
+RCT_EXTERN_METHOD(launchChangePinWidget:(nonnull NSString*)cardId
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+
 
 @end

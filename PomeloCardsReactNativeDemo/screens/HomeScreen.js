@@ -49,6 +49,13 @@ const HomeScreen = ({ navigation }) => {
         .catch(e => { alert(`Show sensitive data failed with error: ${e.toString()}`) })
     }
 
+    function launcChangePinWidget() {
+        NativePomeloCardsModule.launchChangePinWidget("crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG").then(res => {
+            // Sensitive changed pin
+         })
+        .catch(e => { alert(`Change pin failed with error: ${e.toString()}`) })
+    }
+
     function onPressItem(item) {
         if (item.id == 'cards-sdk') {
             launchCards()
@@ -56,6 +63,8 @@ const HomeScreen = ({ navigation }) => {
             navigation.navigate('CardWidget')
         } else if (item.id == 'widget-card-list') {
             launchCardListWidget()
+        } else if (item.id == 'widget-change-pin') {
+            launcChangePinWidget()
         } else {
             alert(`Flow not supported for item: ${item.title}`)
         }
