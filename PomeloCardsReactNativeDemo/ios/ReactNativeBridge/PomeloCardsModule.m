@@ -12,9 +12,6 @@
 
 RCT_EXTERN_METHOD(setupSDK:(nonnull NSString*)email)
 
-RCT_EXTERN_METHOD(launchCards:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject)
-
 RCT_EXTERN_METHOD(launchCardListWidget:(nonnull NSString*)cardId
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)

@@ -1,0 +1,5 @@
+export const email = "juan.perez@pomelo.la"
+export const cardholderName = "Juan Perez"
+export const cardId = "crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG"
+export const lastFourCardDigits = "8016"
+export const image = "tarjetaVirtual"

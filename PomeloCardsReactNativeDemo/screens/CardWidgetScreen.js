@@ -1,13 +1,14 @@
 import React, { useRef } from 'react'
 import ReactNative, { Button, SafeAreaView, StyleSheet } from 'react-native';
 import PomeloCardWidgetViewManager, { PomeloCardView } from '../native_modules/PomeloCardWidgetViewManager';
+import * as constants from './constants'
 
 const CardWidgetScreen = () => {
     const cardViewRef = useRef(null)
 
     function showSensitiveData() {
       const tag = ReactNative.findNodeHandle(cardViewRef.current)
-      PomeloCardWidgetViewManager.showSensitiveData(tag, "crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG")
+      PomeloCardWidgetViewManager.showSensitiveData(tag, constants.cardId)
       .then(res => {
           // Sensitive data load successfully
        })
@@ -19,7 +20,7 @@ const CardWidgetScreen = () => {
             <PomeloCardView 
                 style={styles.card}
                 ref={cardViewRef}
-                setupParams={{cardholderName:"Juan Perez", lastFourCardDigits:"8016"}}
+                setupParams={{cardholderName:constants.cardholderName, lastFourCardDigits:constants.lastFourCardDigits, image: constants.image}}
                 />
               <Button
                 onPress={() => showSensitiveData()}

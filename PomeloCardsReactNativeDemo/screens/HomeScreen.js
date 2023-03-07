@@ -2,55 +2,18 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, View, SectionList, TouchableOpacity, Text } from 'react-native';
 import NativePomeloCardsModule from '../native_modules/PomeloCardsModule';
-
-const DATA = [
-    {
-        title: 'SDK',
-        data: [{
-            id: 'cards-sdk',
-            title: 'Cards',
-        }]
-    },
-    {
-        title: 'Widgets',
-        data: [
-            {
-                id: 'widget-card',
-                title: 'Card',
-            },
-            {
-                id: 'widget-card-list',
-                title: 'Card list',
-            },
-            {
-                id: 'widget-change-pin',
-                title: 'Change Pin',
-            },
-            {
-                id: 'widget-activate-card',
-                title: 'Activate Card',
-            }
-        ]
-    }
-];
+import * as constants from './constants'
 
 const HomeScreen = ({ navigation }) => {
-    function launchCards() {
-        NativePomeloCardsModule.launchCards()
-            .catch(e => {
-                alert(`Launch card failed with error: ${e.toString()}`)
-            })
-    }
-
     function launchCardListWidget() {
-        NativePomeloCardsModule.launchCardListWidget("crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG").then(res => {
+        NativePomeloCardsModule.launchCardListWidget(constants.cardId).then(res => {
             // Sensitive data load successfully
          })
         .catch(e => { alert(`Show sensitive data failed with error: ${e.toString()}`) })
     }
 
     function launcChangePinWidget() {
-        NativePomeloCardsModule.launchChangePinWidget("crd-2LQY6Jrh6ScnBaJT7JHcX36ecQG").then(res => {
+        NativePomeloCardsModule.launchChangePinWidget(constants.cardId).then(res => {
             // Sensitive changed pin
          })
         .catch(e => { alert(`Change pin failed with error: ${e.toString()}`) })
@@ -64,9 +27,7 @@ const HomeScreen = ({ navigation }) => {
     }
 
     function onPressItem(item) {
-        if (item.id == 'cards-sdk') {
-            launchCards()
-        } else if (item.id == 'widget-card') {
+        if (item.id == 'widget-card') {
             navigation.navigate('CardWidget')
         } else if (item.id == 'widget-card-list') {
             launchCardListWidget()
@@ -101,6 +62,29 @@ const HomeScreen = ({ navigation }) => {
     );
 };
 
+const DATA = [
+    {
+        title: 'Widgets',
+        data: [
+            {
+                id: 'widget-card',
+                title: 'Card',
+            },
+            {
+                id: 'widget-card-list',
+                title: 'Card list',
+            },
+            {
+                id: 'widget-change-pin',
+                title: 'Change Pin',
+            },
+            {
+                id: 'widget-activate-card',
+                title: 'Activate Card',
+            }
+        ]
+    }
+];
 
 const styles = StyleSheet.create({
     container: {

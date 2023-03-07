@@ -10,12 +10,13 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen';
 import CardWidgetScreen from './CardWidgetScreen';
 import NativePomeloCardsModule from '../native_modules/PomeloCardsModule';
+import * as constants from './constants'
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   useEffect(() => {
-    NativePomeloCardsModule.setupSDK("juan.perez@pomelo.la")
+    NativePomeloCardsModule.setupSDK(constants.email)
   }, []);
   
   return (
