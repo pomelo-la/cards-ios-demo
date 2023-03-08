@@ -113,7 +113,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				8596591F29AF956C00B7B748 /* Core */,
 				8596590229AF8BB300B7B748 /* PomeloCardsReactNativeDemo-Bridging-Header.h */,
-				85971F9D29B7908C00FDEE87 /* ReactNativeBridge */,
+				85971F9D29B7908C00FDEE87 /* PomeloReactNativeBridge */,
 			);
 			name = PomeloCardsReactNativeDemo;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		85971F9D29B7908C00FDEE87 /* ReactNativeBridge */ = {
+		85971F9D29B7908C00FDEE87 /* PomeloReactNativeBridge */ = {
 			isa = PBXGroup;
 			children = (
 				8596590329AF8BB400B7B748 /* PomeloCardsModule.swift */,
@@ -208,7 +208,7 @@
 				8596591929AF956200B7B748 /* Theme */,
 				85971FA129B79B4D00FDEE87 /* RCTLog */,
 			);
-			path = ReactNativeBridge;
+			path = PomeloReactNativeBridge;
 			sourceTree = "<group>";
 		};
 		85971FA129B79B4D00FDEE87 /* RCTLog */ = {
