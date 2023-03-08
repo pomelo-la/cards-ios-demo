@@ -114,8 +114,6 @@
 				8596591F29AF956C00B7B748 /* Core */,
 				8596590229AF8BB300B7B748 /* PomeloCardsReactNativeDemo-Bridging-Header.h */,
 				85971F9D29B7908C00FDEE87 /* ReactNativeBridge */,
-				8596591429AF956200B7B748 /* Auth */,
-				8596591929AF956200B7B748 /* Theme */,
 			);
 			name = PomeloCardsReactNativeDemo;
 			sourceTree = "<group>";
@@ -168,8 +166,7 @@
 				8596591629AF956200B7B748 /* PomeloAccessTokenDTO.swift */,
 				8596591729AF956200B7B748 /* Service */,
 			);
-			name = Auth;
-			path = PomeloCardsReactNativeDemo/Auth;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		8596591729AF956200B7B748 /* Service */ = {
@@ -185,8 +182,7 @@
 			children = (
 				8596591A29AF956200B7B748 /* PomeloTheme.swift */,
 			);
-			name = Theme;
-			path = PomeloCardsReactNativeDemo/Theme;
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		8596591F29AF956C00B7B748 /* Core */ = {
@@ -208,6 +204,8 @@
 				8596592129AF96E200B7B748 /* PomeloCardsModule.m */,
 				85A9DB2C29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift */,
 				85A9DB2E29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m */,
+				8596591429AF956200B7B748 /* Auth */,
+				8596591929AF956200B7B748 /* Theme */,
 				85971FA129B79B4D00FDEE87 /* RCTLog */,
 			);
 			path = ReactNativeBridge;
