@@ -25,6 +25,7 @@
 		85971FA329B79B6400FDEE87 /* RCTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85971FA229B79B6400FDEE87 /* RCTLog.swift */; };
 		85A9DB2D29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A9DB2C29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift */; };
 		85A9DB2F29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A9DB2E29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m */; };
+		85ED471129B8EA1C00A37A49 /* PomeloImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85ED471029B8EA1C00A37A49 /* PomeloImages.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		85971FA229B79B6400FDEE87 /* RCTLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTLog.swift; sourceTree = "<group>"; };
 		85A9DB2C29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeloCardWidgetViewManager.swift; sourceTree = "<group>"; };
 		85A9DB2E29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PomeloCardWidgetViewManager.m; sourceTree = "<group>"; };
+		85ED471029B8EA1C00A37A49 /* PomeloImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PomeloImages.xcassets; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-PomeloCardsReactNativeDemo-PomeloCardsReactNativeDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomeloCardsReactNativeDemo-PomeloCardsReactNativeDemoTests.release.xcconfig"; path = "Target Support Files/Pods-PomeloCardsReactNativeDemo-PomeloCardsReactNativeDemoTests/Pods-PomeloCardsReactNativeDemo-PomeloCardsReactNativeDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 				8596592129AF96E200B7B748 /* PomeloCardsModule.m */,
 				85A9DB2C29B0D7FA00FFA567 /* PomeloCardWidgetViewManager.swift */,
 				85A9DB2E29B0DA0300FFA567 /* PomeloCardWidgetViewManager.m */,
+				85ED470F29B8EA0100A37A49 /* Resources */,
 				8596591429AF956200B7B748 /* Auth */,
 				8596591929AF956200B7B748 /* Theme */,
 				85971FA129B79B4D00FDEE87 /* RCTLog */,
@@ -219,6 +222,14 @@
 				85971FA229B79B6400FDEE87 /* RCTLog.swift */,
 			);
 			path = RCTLog;
+			sourceTree = "<group>";
+		};
+		85ED470F29B8EA0100A37A49 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85ED471029B8EA1C00A37A49 /* PomeloImages.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -332,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85ED471129B8EA1C00A37A49 /* PomeloImages.xcassets in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

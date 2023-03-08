@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import ReactNative, { Button, SafeAreaView, StyleSheet } from 'react-native';
-import PomeloCardWidgetViewManager, { PomeloCardView } from '../native_modules/PomeloCardWidgetViewManager';
+import PomeloCardWidgetViewManager, { PomeloCardView } from '../pomelo_native_modules/PomeloCardWidgetViewManager';
 import * as constants from './constants'
 
 const CardWidgetScreen = () => {

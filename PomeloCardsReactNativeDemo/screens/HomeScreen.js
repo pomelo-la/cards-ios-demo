@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { SafeAreaView, StyleSheet, View, SectionList, TouchableOpacity, Text } from 'react-native';
-import NativePomeloCardsModule from '../native_modules/PomeloCardsModule';
+import NativePomeloCardsModule from '../pomelo_native_modules/PomeloCardsModule';
 import * as constants from './constants'
 
 const HomeScreen = ({ navigation }) => {
