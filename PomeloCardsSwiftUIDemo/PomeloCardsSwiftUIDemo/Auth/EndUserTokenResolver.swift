@@ -9,7 +9,7 @@ import Foundation
 import PomeloNetworking
 
 
-/// Protocol with the method that retrieves a end user token for a given user email asynchronously
+/// Protocol with the method that retrieves an end user token for a given user email asynchronously
 protocol UserEmailEndUserTokenResolverProtocol {
     func resolve(email: String, completion: @escaping (String?) -> Void)
 }
