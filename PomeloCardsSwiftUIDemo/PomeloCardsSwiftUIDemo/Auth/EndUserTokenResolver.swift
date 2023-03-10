@@ -15,7 +15,7 @@ protocol UserEmailEndUserTokenResolverProtocol {
 }
 
 
-/// Implementation of `UserEmailEndUserTokenResolverProtocol` using an sample backend service.
+/// Implementation of `UserEmailEndUserTokenResolverProtocol` using a sample backend service.
 class UserEmailEndUserTokenResolver: UserEmailEndUserTokenResolverProtocol {
     
     func resolve(email: String, completion: @escaping (String?) -> Void) {
