@@ -1,0 +1,77 @@
+{
+  "pins" : [
+    {
+      "identity" : "amplitude-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/amplitude/Amplitude-iOS",
+      "state" : {
+        "revision" : "a02a97c78b63576b441900e12e06df335672e7da",
+        "version" : "8.15.1"
+      }
+    },
+    {
+      "identity" : "analytics-connector-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/amplitude/analytics-connector-ios.git",
+      "state" : {
+        "revision" : "d3d682a26ca6f4947ece2c2e627971bb41b940fa",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "analytics-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:pomelo-la/analytics-ios.git",
+      "state" : {
+        "revision" : "0df64b0922faf48d2e945d3c858a59742795e0b0",
+        "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "biometry-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:pomelo-la/biometry-ios.git",
+      "state" : {
+        "revision" : "fdbf29b5c2b92ece998bde9c9094e06e22844f32",
+        "version" : "1.1.4"
+      }
+    },
+    {
+      "identity" : "cards-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:pomelo-la/cards-ios.git",
+      "state" : {
+        "revision" : "1b54e6ec32ac816d7225cb5106f4834d98ce3ef1",
+        "version" : "0.2.5"
+      }
+    },
+    {
+      "identity" : "networking-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:pomelo-la/networking-ios.git",
+      "state" : {
+        "revision" : "5c0fa1c2c29ec8dbc2a2081c7a87e5d7f3d6dbd0",
+        "version" : "2.2.1"
+      }
+    },
+    {
+      "identity" : "server-driven-ui-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:pomelo-la/server-driven-ui-ios.git",
+      "state" : {
+        "revision" : "89778a9b22a0aa1985cd7488a162f6e9b86a6a83",
+        "version" : "2.0.3"
+      }
+    },
+    {
+      "identity" : "ui-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:pomelo-la/ui-ios.git",
+      "state" : {
+        "revision" : "71387939f65148ea6aabc178856142d4e7c54315",
+        "version" : "1.2.2"
+      }
+    }
+  ],
+  "version" : 2
+}
