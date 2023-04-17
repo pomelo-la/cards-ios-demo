@@ -7,8 +7,6 @@
 
 import UIKit
 import PomeloCards
-import PomeloUI
-import PomeloNetworking
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,11 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func setupPomeloCards() {
         //Configure Cards SDK
-        PomeloCards.initialize(with: PomeloCardsConfiguration(environment: .staging))
+        PomeloCardsSDK.initialize(with: PomeloCardsConfiguration(environment: .staging))
         //Configure authorization service on PomeloNetworking
-        PomeloNetworkConfigurator.shared.configure(authorizationService: EndUserTokenAuthorizationService())
+        PomeloCardsSDK.setupAuthorizationService(EndUserTokenAuthorizationService())
         //Configure theme on PomeloUI
-        PomeloUIGateway.shared.configure(theme: BlueClientTheme())
+        PomeloCardsSDK.setupTheme(BlueClientCardsTheme())
     }
 }
 

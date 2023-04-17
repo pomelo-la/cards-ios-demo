@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import PomeloNetworking
 
 
 /// Protocol with the method that retrieves a end user token for a given user email asynchronously

@@ -1,5 +1,5 @@
 //
-//  BlueClientTheme.swift
+//  VioletClientCardsTheme.swift
 //  CardsSampleApp
 //
 //  Created by Oscar Odon on 08/06/2022.
@@ -7,14 +7,14 @@
 
 import Foundation
 import UIKit
-import PomeloUI
+import PomeloCards
 
-class BlueClientTheme: PomeloThemeable {
-    var colors: PomeloColors = PomeloColors(primary: .primaryColor,
+class VioletClientCardsTheme: PomeloCardsThemeable {
+    var colors: PomeloCardsColors = PomeloCardsColors(primary: .primaryColor,
                                             secondary: .secondaryColor,
                                             background: .backgroundColor)
     
-    var buttons: PomeloButtonsStyle = PomeloButtonsStyle(
+    var buttons: PomeloCardsButtonsStyle = PomeloCardsButtonsStyle(
         primary: .init(
             cornerRadius: 10,
             enabledStyle: .init(backgroundColor: .primaryColor, foregroundColor: .white),
@@ -37,29 +37,27 @@ class BlueClientTheme: PomeloThemeable {
         )
     )
     
-    var feedbacks: PomeloFeedback?
+    var feedbacks: PomeloCardsFeedback?
     
-    var text: PomeloTextStyle? = .init(textColor: .label,
+    var text: PomeloCardsTextStyle? = .init(textColor: .label,
                                        font: nil)
 }
 
 private extension UIColor {
     static var primaryColor: UIColor {
         return UIColor{ (traitCollection) -> UIColor in
-            return traitCollection.userInterfaceStyle == .light ? UIColor(red: 0.07, green: 0.39, blue: 0.87, alpha: 1.00) : UIColor(red: 0.07, green: 0.39, blue: 0.87, alpha: 0.75)
+            return traitCollection.userInterfaceStyle == .light ? UIColor(red: 0.30, green: 0.21, blue: 0.46, alpha: 1.00) : UIColor(red: 0.30, green: 0.21, blue: 0.46, alpha: 0.75)
         }
     }
     
     static var secondaryColor: UIColor {
         return UIColor{ (traitCollection) -> UIColor in
-            return traitCollection.userInterfaceStyle == .light ? UIColor(red: 0.28, green: 0.71, blue: 1.00, alpha: 1.00) : UIColor(red: 0.28, green: 0.71, blue: 1.00, alpha: 0.80)
+            return traitCollection.userInterfaceStyle == .light ? UIColor(red: 0.47, green: 0.35, blue: 0.65, alpha: 1.00) : UIColor(red: 0.47, green: 0.35, blue: 0.65, alpha: 0.75)
         }
     }
     
     static var backgroundColor: UIColor {
-        return UIColor{ (traitCollection) -> UIColor in
-            return traitCollection.userInterfaceStyle == .light ? UIColor(red: 0.87, green: 0.96, blue: 1.00, alpha: 1.00) : UIColor(red: 0.02, green: 0.16, blue: 0.24, alpha: 1.00)
-        }
+        .systemBackground
     }
     
     static var buttonBackgroundColor: UIColor {

@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import PomeloCards
-import PomeloUI
 
 /// Example - ViewController that contains the view `PomeloCardWidgetView`
 class CardStoryboardViewController: UIViewController {
@@ -56,7 +55,6 @@ class CardStoryboardViewController: UIViewController {
     }
     
     private func setupView() {
-        self.view.backgroundColor = PomeloUIGateway.shared.theme.colors.background
         self.pomeloCardView.setup(cardholderName: cardholderName,
                                   lastFourCardDigits: lastFourCardDigits,
                                   imageFetcher: PomeloImageFetcher(image: cardImage ?? UIImage()),

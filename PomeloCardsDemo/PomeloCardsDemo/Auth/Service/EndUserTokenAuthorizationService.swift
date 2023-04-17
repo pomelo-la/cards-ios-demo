@@ -7,11 +7,10 @@
 
 import Foundation
 import PomeloCards
-import PomeloNetworking
 
 
-/// Client implementation of `PomeloAuthorizationServiceProtocol`. It must return a valid end user token for a given client and user by implementing `func getValidToken() -> String`
-class EndUserTokenAuthorizationService: PomeloAuthorizationServiceProtocol {
+/// Client implementation of `PomeloCardsAuthorizationServiceProtocol`. It must return a valid end user token for a given client and user by implementing `func getValidToken() -> String`
+class EndUserTokenAuthorizationService: PomeloCardsAuthorizationServiceProtocol {
     private let email: String
     private let endUserTokenResolver: UserEmailEndUserTokenResolverProtocol
     

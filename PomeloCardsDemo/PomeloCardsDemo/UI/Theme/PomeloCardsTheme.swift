@@ -1,5 +1,5 @@
 //
-//  PomeloTheme.swift
+//  PomeloCardsTheme.swift
 //  CardsSampleApp
 //
 //  Created by Oscar Odon on 08/06/2022.
@@ -7,14 +7,14 @@
 
 import Foundation
 import UIKit
-import PomeloUI
+import PomeloCards
 
-class PomeloTheme: PomeloThemeable {
-    var colors: PomeloColors = PomeloColors(primary: .primaryColor,
+class PomeloCardsTheme: PomeloCardsThemeable {
+    var colors: PomeloCardsColors = PomeloCardsColors(primary: .primaryColor,
                                             secondary: .secondaryColor,
                                             background: .backgroundColor)
     
-    var buttons: PomeloButtonsStyle = PomeloButtonsStyle(
+    var buttons: PomeloCardsButtonsStyle = PomeloCardsButtonsStyle(
         primary: .init(
             cornerRadius: 10,
             enabledStyle: .init(backgroundColor: .primaryColor, foregroundColor: .butttonForegroundColor),
@@ -37,9 +37,9 @@ class PomeloTheme: PomeloThemeable {
         )
     )
     
-    var feedbacks: PomeloFeedback?
+    var feedbacks: PomeloCardsFeedback?
     
-    var text: PomeloTextStyle? = .init(textColor: .label,
+    var text: PomeloCardsTextStyle? = .init(textColor: .label,
                                        font: nil)
 }
 

@@ -84,3 +84,6 @@ xcuserdata
 
 ### Local Helper ###
 **/Credentials-Identity.plist
+
+### XCFramework ###
+**/PomeloCards.xcframework/*
